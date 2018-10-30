@@ -1,2 +1,2 @@
-# gmail-basic-html-theme
+# Gmail Basic HTML Theme
 
