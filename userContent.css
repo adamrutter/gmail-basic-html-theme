@@ -81,7 +81,6 @@
   }
 
   body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) {
-    color: red !important;
     padding: 0 10px;
   }
   
@@ -90,7 +89,7 @@
   }
   
   body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a:hover {
-    color: var(--black) !important;
+/*     color: var(--black) !important; */
   }
   
   /* Compose Mail button */
@@ -220,6 +219,83 @@
   /* Refresh button */
   body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type a.searchPageLink {
     display: none !important;
+  }
+  
+  /* Main mailbox */
+  table.th {
+    
+  }
+  
+  /* Individual emails */
+  table.th tr {
+/*     position: relative; */
+  }
+  
+  /* Checkbox */
+  table.th tr td:nth-of-type(1) {
+    position: relative;
+  }
+  
+  table.th tr td:nth-of-type(1) *:nth-child(n+2) {
+    display: none;
+  }
+  
+  table.th tr td:nth-of-type(1) input[type="checkbox"] {
+    background: red !important;
+    cursor: pointer;
+/*     opacity: 0; */
+    position: relative;
+/*     visibility: hidden; */
+    width: 100px;
+    z-index: 99;
+  }
+  
+  table.th tr td:nth-of-type(1) input:after {
+    border: 2px solid var(--grey);
+    border-radius: 3px;
+    content: '';
+/*     display: inline-block; */
+    height: 14px;
+    position: absolute;
+    left: calc(50% - 9px);
+    top: calc(50% - 9px);
+    width: 14px;
+/*     z-index: -1; */
+  }
+  
+  table.th tr td:nth-of-type(1):focus:after {
+    background: red;
+    border-color: red;
+  }
+  
+/*   table.th tr td:nth-of-type(1):hover:after {
+    border-color: var(--black);
+  } */
+  
+/*   table.th tr td:nth-of-type(1) input[type="checkbox"]:checked + td:after {
+    background: red;
+    width: 50px;
+  } */
+  
+  /* Unread emails */
+  table.th tr[bgcolor="#ffffff"] {
+/*     background: firebrick; */
+  }
+  
+  /* Read emails */
+  table.th tr[bgcolor="#e8eef7"] {
+/*     background: forestgreen !important; */
+  }
+  
+  /* Attachment paper clip icon */
+  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/paperclip.gif"] {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 20px;
+    object-position: -20px;
+    width: 20px;
   }
   
   /* Bottom of page information */
