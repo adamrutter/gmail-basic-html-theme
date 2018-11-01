@@ -2,11 +2,11 @@
   html {
     --accent-color: #ee6e73;
     --black: #222;
-    --grey-light: #e0e0e0;
     --grey: #666;
-    --white: #fafafa;
-    
-    --border-spacing: 3px;
+    --grey-light: #e0e0e0;
+    --grey-very-light: #eeeeee;
+    --white: #fafafa;    
+/*     --border-spacing: 3px; */
   }
   
   * {
@@ -24,6 +24,10 @@
   a {
     color: var(--black) !important;
     text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
   }
   
   /* Nav bar for other Google services at the top of the screen */
@@ -44,7 +48,8 @@
   }
   
   a.gb4:hover {
-    color: black !important;
+/*     color: black !important; */
+    text-decoration: underline !important;
   }
   
   /* Horizontal divider between the nav bar table and the main content table */
@@ -114,30 +119,37 @@
   
   /* Bottom margin of the Compose Mail button */
   body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(2) {
-    margin: 5px;
+    margin: 10px;
     display: block;
   }
   
   /* Mailbox navigation menu */
-  body > table:nth-of-type(2) td:nth-of-type(1) table {
+  table.m {
     margin-left: -8px;
   }
   
-  body > table:nth-of-type(2) td:nth-of-type(1) table td {
-/*! border-spacing: 0 var(--border-spacing) !important; */
-    padding: 5px 15px;
+  table.m td {
+    padding: 0;
   }
   
-  /* Current mailbox */
-  body > table:nth-of-type(2) td:nth-of-type(1) table td[bgcolor="#C3D9FF"]:first-of-type {
-    background: #fce8e6;
-    border-radius: 20px;
+  table.m tr:nth-of-type(n+3) a {
+    border-radius: 20px !important;
+    display: block;
+    padding: 5px 15px;
+    padding-left: 28px;
+    text-decoration: none;
     transform: translateX(-14px);
   }
   
+  table.m tr:nth-of-type(n+3) a:hover {
+    background: var(--grey-very-light);
+    text-decoration: none;
+  }
+  
+  /* Current mailbox */
   body > table:nth-of-type(2) td:nth-of-type(1) table td[bgcolor="#C3D9FF"]:first-of-type a {
     color: #d93025 !important;
-    padding-left: 14px;
+    background: #fce8e6;
   }
   
   /* Labels menu */
@@ -148,7 +160,7 @@
   table.l a {
     display: inline-block;
     margin: 0;
-    padding: 5px 0
+    padding: 5px 0;
   }
   
   table.l a font {
@@ -211,7 +223,56 @@
   }
   
   /* Bottom of page information */
-  body > table:nth-of-type(2) td:nth-of-type(2) table:nth-of-type(2) {
-/*     background: red; */
+  table.ft {
+    color: var(--grey) !important;
+    font-size: 0.9em;
+    margin-top: 50px;
+    width: 100%
+  }
+  
+  table.ft a {
+    color: var(--grey) !important;
+    font-size: 0.9em !important;
+  }
+  
+  table.ft tr:nth-of-type(2) td {
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+  }
+  
+  table.ft tr:nth-of-type(2) td * {
+    font-size: 0.9em !important;   
+  }
+  
+  table.ft tr:first-of-type {
+    display: none;
+  }
+  
+  table.ft tr:nth-of-type(2) td > *:nth-child(3) {
+    display: none;
+  }
+  
+  /* Current mailbox usage */
+  table.ft tr:nth-of-type(2) td > *:nth-child(1) {
+    color: var(--grey) !important;
+    font-weight: 400 !important;
+    max-width: 150px;
+    text-align: left;
+  }
+  
+  /* Other locations the account is open */
+  table.ft tr:nth-of-type(2) td > *:nth-child(2) {
+    max-width: 250px;
+    text-align: right;
+  }
+  
+  table.ft tr:nth-of-type(2) td > *:nth-child(2) a {
+    font-size: 1em !important;
+  }
+  
+  table.ft tr:nth-of-type(3) td {
+    display: block;
+    margin-top: 25px;
   }
 }
