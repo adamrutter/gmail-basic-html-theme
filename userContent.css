@@ -1,5 +1,179 @@
 @-moz-document url-prefix(https://mail.google.com/mail/u/0/h) {
+  html {
+    --accent-color: #ee6e73;
+    --black: #222;
+    --grey-light: #e0e0e0;
+    --grey: #666;
+    --white: #fafafa;
+    
+    --border-spacing: 3px;
+  }
+  
+  * {
+    font-family: "Segoe UI", sans-serif !important;
+    font-size: 14px !important;
+    /*! margin: 10px; */
+  }
+  
   body {
+    background: var(--white);
+    color: var(--black);
+  }
+     
+  /* Links */
+  a {
+    color: var(--black) !important;
+    text-decoration: none;
+  }
+  
+  /* Nav bar for other Google services at the top of the screen */
+  #gbar {
+    display: none;
+  }
+  
+  /* Nav bar for Gmail settings, account etc */
+  #guser {
+    border-bottom: 1px solid var(--grey-light);
+    margin: 0 -8px;
+    padding: 0 11px;
+  }
+  
+  a.gb4 {
+    color: var(--black) !important;
+    text-decoration: none !important;
+  }
+  
+  a.gb4:hover {
+    color: black !important;
+  }
+  
+  /* Horizontal divider between the nav bar table and the main content table */
+  .gbh {
+    display: none;  
+  }
+  
+  /* Search bar */
+  #sbq {
+    background: var(--grey-light);
+    border: 1px solid var(--grey-light);
+    border-radius: 4px;
+    color: var(--black);
+    padding: 10px;
+    width: 100%;
+  }
+  
+  #sbq:focus {
+    background: var(--white);
+    box-shadow: 0 1px 1px grey;
+  }
+  
+  .search-form-submit {
+    display: none !important;
+  }
+  
+  body > table:first-of-type tbody:first-of-type tr:nth-of-type(2) tr:first-of-type td:first-of-type {
+    width: 100%;
+  }
+
+  body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) {
     color: red !important;
+    padding: 0 10px;
+  }
+  
+  body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a {
+    color: var(--grey) !important;
+  }
+  
+  body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a:hover {
+    color: var(--black) !important;
+  }
+  
+  /* Compose Mail button */
+  a[accesskey="c"] {
+    border-radius: 50px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 1px 3px 1px rgba(60,64,67,0.149);
+    padding: 15px 18px 15px 15px;
+  }
+  
+  a[accesskey="c"]:hover {
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302),0 4px 8px 3px rgba(60,64,67,0.149);
+  }
+  
+  a[accesskey="c"]:active {
+    background: var(--grey-light);
+  }
+  
+  a[accesskey="c"]:before {
+    background-image: url('https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    margin-right: 5px;
+    padding: 17px;
+  }
+  
+  /* Bottom margin of the Compose Mail button */
+  body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(2) {
+    margin: 5px;
+    display: block;
+  }
+  
+  /* Mailbox navigation menu */
+  body > table:nth-of-type(2) td:nth-of-type(1) table {
+    margin-left: -8px;
+  }
+  
+  body > table:nth-of-type(2) td:nth-of-type(1) table td {
+/*! border-spacing: 0 var(--border-spacing) !important; */
+    padding: 5px 15px;
+  }
+  
+  /* Current mailbox */
+  body > table:nth-of-type(2) td:nth-of-type(1) table td[bgcolor="#C3D9FF"]:first-of-type {
+    background: #fce8e6;
+    border-radius: 20px;
+    transform: translateX(-14px);
+  }
+  
+  body > table:nth-of-type(2) td:nth-of-type(1) table td[bgcolor="#C3D9FF"]:first-of-type a {
+    color: #d93025 !important;
+    padding-left: 14px;
+  }
+  
+  /* Labels */
+  table.l h2 {
+    display: none;
+  }
+  
+  table.l a {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 0
+  }
+  
+  table.l a font {
+    color: var(--black);
+  }
+  
+  /* Buttons */
+  input[type="submit"] {
+    background: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    color: white;
+    cursor: pointer;
+    letter-spacing: .5px; 
+    padding: 8px 16px;
+    text-transform: uppercase;
+  }
+  
+  input[type="submit"]:hover {
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+    filter: brightness(1.075);
+  }
+  
+  input[type="submit"]:focus {
+    filter: brightness(0.95);
   }
 }
