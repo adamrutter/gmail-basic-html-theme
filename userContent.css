@@ -140,7 +140,7 @@
     padding-left: 14px;
   }
   
-  /* Labels */
+  /* Labels menu */
   table.l h2 {
     display: none;
   }
@@ -155,6 +155,21 @@
     color: var(--black);
   }
   
+  /* Remove default blue background */
+  [bgcolor="#C3D9FF"] {
+    background: none;
+  }
+  
+  /* Table containing buttons at the top */
+  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type {
+    margin-bottom: 4px;
+  }
+  
+  /* Table containing buttons at the bottom */
+  body > table:nth-of-type(2) td:nth-of-type(2) table:nth-of-type(3) {
+    margin-top: 4px;
+  }
+  
   /* Buttons */
   input[type="submit"] {
     background: var(--accent-color);
@@ -164,6 +179,7 @@
     color: white;
     cursor: pointer;
     letter-spacing: .5px; 
+    margin: 4px 0;
     padding: 8px 16px;
     text-transform: uppercase;
   }
@@ -175,5 +191,27 @@
   
   input[type="submit"]:focus {
     filter: brightness(0.95);
+  }
+  
+  /* Dropdown menus */
+  select {    
+    background-color: var(--white);
+    color: var(--grey);
+    cursor: pointer;
+    border: 1px solid var(--grey-light);
+    border-radius: 4px;
+    padding: 7px 16px;
+    text-transform: uppercase;
+    -moz-appearance: none;
+  }
+  
+  /* Refresh button */
+  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type a.searchPageLink {
+    display: none !important;
+  }
+  
+  /* Bottom of page information */
+  body > table:nth-of-type(2) td:nth-of-type(2) table:nth-of-type(2) {
+/*     background: red; */
   }
 }
