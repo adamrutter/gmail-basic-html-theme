@@ -2,9 +2,11 @@
   html {
     --accent-color: #ee6e73;
     --black: #222;
-    --grey: #666;
-    --grey-light: #e0e0e0;
-    --grey-very-light: #eeeeee;
+    --grey-very-dark: #424242;
+    --grey-dark: #666;
+    --grey: #e0e0e0;
+    --grey-light: #eeeeee;
+    --grey-very-light: #f5f5f5;
     --white: #fafafa;    
 /*     --border-spacing: 3px; */
   }
@@ -59,7 +61,7 @@
   
   /* Search bar */
   #sbq {
-    background: var(--grey-light);
+    background: var(--grey);
     border: 1px solid var(--grey-light);
     border-radius: 4px;
     color: var(--black);
@@ -85,7 +87,7 @@
   }
   
   body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a {
-    color: var(--grey) !important;
+    color: var(--grey-dark) !important;
   }
   
   body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a:hover {
@@ -207,7 +209,7 @@
   /* Dropdown menus */
   select {    
     background-color: var(--white);
-    color: var(--grey);
+    color: var(--grey-dark);
     cursor: pointer;
     border: 1px solid var(--grey-light);
     border-radius: 4px;
@@ -233,12 +235,12 @@
   
   /* Unread emails */
   table.th tr[bgcolor="#ffffff"] {
-/*     background: firebrick; */
+    background: var(--white);
   }
   
   /* Read emails */
   table.th tr[bgcolor="#e8eef7"] {
-/*     background: forestgreen !important; */
+    background: var(--grey-very-light);
   }
   
   /* Attachment paper clip icon */
@@ -248,20 +250,44 @@
     background-repeat: no-repeat;
     background-size: 20px;
     height: 20px;
+    margin: 0 10px;
     object-position: -20px;
     width: 20px;
   }
   
+  /* Email subject */
+  table.th tr td:nth-child(3) {
+    padding-left: 25px;
+  }
+  
+  /* Email labels */
+  span.ts font:first-child {
+/*     padding: 5px; */
+    /*! position: relative; */  
+  }
+  
+  table.th tr td:nth-child(3) font[color="#006633"]:not(:empty) {
+    background: var(--grey);
+    border-radius: 4px;
+    color: var(--grey-very-dark);
+    font-size: 0.8em !important;
+    float: left;
+    margin-right: 7px;
+    padding: 0 4px;
+    position: relative;
+    top: 2px;
+  }
+  
   /* Bottom of page information */
   table.ft {
-    color: var(--grey) !important;
+    color: var(--grey-dark) !important;
     font-size: 0.9em;
     margin-top: 50px;
     width: 100%
   }
   
   table.ft a {
-    color: var(--grey) !important;
+    color: var(--grey-dark) !important;
     font-size: 0.9em !important;
   }
   
@@ -285,7 +311,7 @@
   
   /* Current mailbox usage */
   table.ft tr:nth-of-type(2) td > *:nth-child(1) {
-    color: var(--grey) !important;
+    color: var(--grey-dark) !important;
     font-weight: 400 !important;
     max-width: 150px;
     text-align: left;
