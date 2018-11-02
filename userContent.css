@@ -4,9 +4,9 @@
     --black: #222;
     --grey-very-dark: #424242;
     --grey-dark: #666;
-    --grey: #e0e0e0;
+    --grey: #d9d9d9;
     --grey-light: #eeeeee;
-    --grey-very-light: #f5f5f5;
+    --grey-very-light: #f2f2f2;
     --white: #fafafa;    
 /*     --border-spacing: 3px; */
   }
@@ -136,6 +136,8 @@
   table.m tr:nth-of-type(n+3) a {
     border-radius: 20px !important;
     display: block;
+/*     font-family: "Roboto", sans-serif !important; */
+/*     font-size: 0.9em !important; */
     padding: 5px 15px;
     padding-left: 28px;
     text-decoration: none;
@@ -225,12 +227,17 @@
   
   /* Main mailbox */
   table.th {
-    
+    border-collapse: collapse;
+    margin: 20px 0;
   }
   
-  /* Individual emails */
-  table.th tr {
-/*     position: relative; */
+  /* Individual emails */  
+  table.th tr td {
+    border: 1px solid var(--grey);
+    border-left: none;
+    border-right: none;
+    font-family: "Roboto", sans-serif !important;
+    padding: 4px 10px;
   }
   
   /* Unread emails */
@@ -243,16 +250,14 @@
     background: var(--grey-very-light);
   }
   
-  /* Attachment paper clip icon */
-  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/paperclip.gif"] {
-    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20px;
-    height: 20px;
-    margin: 0 10px;
-    object-position: -20px;
-    width: 20px;
+  /* Checkbox */
+  table.th tr td:nth-child(1) img {
+    display: none;
+  }
+  
+  /* Email sender */
+  table.th tr td:nth-child(2) {
+    padding-left: 0;
   }
   
   /* Email subject */
@@ -260,12 +265,11 @@
     padding-left: 25px;
   }
   
-  /* Email labels */
-  span.ts font:first-child {
-/*     padding: 5px; */
-    /*! position: relative; */  
+  table.th tr td:nth-child(3) [color="#7777CC"] {
+    color: var(--grey-dark);
   }
   
+  /* Email labels */ 
   table.th tr td:nth-child(3) font[color="#006633"]:not(:empty) {
     background: var(--grey);
     border-radius: 4px;
@@ -276,6 +280,24 @@
     padding: 0 4px;
     position: relative;
     top: 2px;
+  }
+  
+    /* Attachment paper clip icon */
+  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/paperclip.gif"] {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 20px;
+    margin-left: 10px;
+    object-position: -20px;
+    width: 20px;
+  }
+  
+  /* Email date */
+  table.th tr td:nth-child(4),
+  table.th tr td:nth-child(4) b {
+    font-size: 12px !important;
   }
   
   /* Bottom of page information */
