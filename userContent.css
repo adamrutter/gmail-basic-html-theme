@@ -56,7 +56,23 @@
   
   /* Horizontal divider between the nav bar table and the main content table */
   .gbh {
-    display: none;  
+    display: none;
+  }
+  
+  /* Search bar containing table */
+  body > table:nth-of-type(1) {
+    margin-bottom: 14px;
+    position: relative;
+  }
+  
+  body > table:nth-of-type(1)::after {
+    background: var(--grey);
+    display: block;
+    content: '';
+    height: 1px;
+    margin-left: -8px;
+    position: absolute;
+    width: calc(100% + 16px);
   }
   
   /* Search bar */
@@ -66,12 +82,29 @@
     border-radius: 4px;
     color: var(--black);
     padding: 10px;
+    padding-right: 40px;
     width: 100%;
   }
   
   #sbq:focus {
     background: var(--white);
     box-shadow: 0 1px 1px grey;
+  }
+  
+  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1) {
+    position: relative;
+  }
+  
+  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1)::after {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/search_black_20dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    height: 100%;
+    opacity: 0.54;
+    position: absolute;
+    right: 12px;
+    width: 20px;
   }
   
   .search-form-submit {
@@ -98,6 +131,8 @@
   a[accesskey="c"] {
     border-radius: 50px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 1px 3px 1px rgba(60,64,67,0.149);
+    display: inline-block;
+    margin: 0 0 14px 9px;
     padding: 15px 18px 15px 15px;
   }
   
@@ -120,11 +155,14 @@
   
   /* Bottom margin of the Compose Mail button */
   body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(2) {
-    margin: 10px;
-    display: block;
+    display: none;
   }
   
   /* Mailbox navigation menu */
+  body > table:nth-of-type(2) td[width="120"] {
+    width: 250px;  
+  }
+  
   table.m {
     margin-left: -8px;
   }
@@ -137,37 +175,129 @@
     border-radius: 20px !important;
     display: block;
 /*     font-family: "Roboto", sans-serif !important; */
-/*     font-size: 0.9em !important; */
-    padding: 5px 15px;
+/*     font-size: 0.98em !important; */
+    padding: 2px 15px;
     padding-left: 28px;
     text-decoration: none;
     transform: translateX(-14px);
   }
   
   table.m tr:nth-of-type(n+3) a:hover {
-    background: var(--grey-very-light);
+    background: var(--grey-light);
     text-decoration: none;
   }
   
+  table.m tr:nth-of-type(n+2) a::before {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 18px;
+    opacity: 0.54;
+    vertical-align: bottom;
+    width: 20px;
+  }
+  
+  table.m tr:nth-of-type(3) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png');
+  }
+  
+  table.m tr:nth-of-type(3) td[bgcolor="#C3D9FF"] a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png');
+    opacity: 1;
+  }
+  
+  table.m tr:nth-of-type(4) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png');
+  }
+  
+  table.m tr:nth-of-type(4) a img {
+    display: none;
+  }
+  
+  table.m tr:nth-of-type(5) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png');
+  }
+  
+  table.m tr:nth-of-type(6) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/insert_drive_file_black_20dp.png');
+  }
+  
+  table.m tr:nth-of-type(7) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/mail_black_20dp.png');
+  }
+  
+  table.m tr:nth-of-type(8) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/report_black_20dp.png');
+  }
+  
+  table.m tr:nth-of-type(9) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png');
+  }
+  
+  table.m tr:nth-of-type(11) a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/person_black_20dp.png');
+  }
+  
   /* Current mailbox */
-  body > table:nth-of-type(2) td:nth-of-type(1) table td[bgcolor="#C3D9FF"]:first-of-type a {
+  body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(3) td[bgcolor="#C3D9FF"]:first-of-type a {
     color: #d93025 !important;
     background: #fce8e6;
   }
   
+  body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(n+4) td[bgcolor="#C3D9FF"]:first-of-type a {
+    background: var(--grey);
+  }
+  
   /* Labels menu */
-  table.l h2 {
+  table.l {
+    margin-left: -8px;
+  }
+  
+  table.l h2,
+  table.l br {
     display: none;
   }
   
   table.l a {
-    display: inline-block;
+    border-radius: 30px;
+    display: block;
     margin: 0;
-    padding: 5px 0;
+    margin-left: -4px;
+    padding: 2px 15px;
+    padding-left: 24px;
+    text-decoration: none;
+    transform: translateX(-12px);
+  }
+  
+  table.l a:hover {
+    background: var(--grey-light);
   }
   
   table.l a font {
     color: var(--black);
+  }
+  
+  table.l a::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_black_20dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 18px;
+    opacity: 0.54;
+    vertical-align: bottom;
+    width: 20px;
+  }
+  
+  table.l .ml::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/settings_black_20dp.png');
   }
   
   /* Remove default blue background */
@@ -225,6 +355,14 @@
     display: none !important;
   }
   
+  /* Page number */
+  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"],
+  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"] * {
+    color: var(--grey-dark) !important;
+    font-size: 0.9em !important;
+    font-weight: 400 !important;
+  }
+  
   /* Main mailbox */
   table.th {
     border-collapse: collapse;
@@ -237,7 +375,7 @@
     border-left: none;
     border-right: none;
     font-family: "Roboto", sans-serif !important;
-    padding: 4px 10px;
+    padding: 2px 10px;
   }
   
   /* Unread emails */
@@ -251,7 +389,7 @@
   }
   
   /* Checkbox */
-  table.th tr td:nth-child(1) img {
+  table.th tr td:nth-of-type(1) img {
     display: none;
   }
   
@@ -291,6 +429,7 @@
     height: 20px;
     margin-left: 10px;
     object-position: -20px;
+    opacity: 0.54;
     width: 20px;
   }
   
