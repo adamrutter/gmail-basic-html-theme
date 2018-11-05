@@ -4,9 +4,9 @@
     --black: #222;
     --grey-very-dark: #424242;
     --grey-dark: #666;
-    --grey: #d9d9d9;
+    --grey: #d6d6d6;
     --grey-light: #eeeeee;
-    --grey-very-light: #f2f2f2;
+    --grey-very-light: #efefef;
     --white: #fafafa;    
 /*     --border-spacing: 3px; */
   }
@@ -59,9 +59,10 @@
     display: none;
   }
   
-  /* Search bar containing table */
+  /* Table containing logo and search bar */
   body > table:nth-of-type(1) {
     margin-bottom: 14px;
+    padding: 0 5px;
     position: relative;
   }
   
@@ -70,41 +71,66 @@
     display: block;
     content: '';
     height: 1px;
-    margin-left: -8px;
+    margin-left: -13px;
     position: absolute;
     width: calc(100% + 16px);
   }
   
   /* Search bar */
   #sbq {
-    background: var(--grey);
-    border: 1px solid var(--grey-light);
+    background: var(--grey-very-light);
+    border: 1px solid var(--grey-very-light);
     border-radius: 4px;
     color: var(--black);
+    font-family: "Roboto", sans-serif !important;
     padding: 10px;
-    padding-right: 40px;
+    padding-left: 40px;
+    transition: 0.1s;
     width: 100%;
+    /*! height: 100%; */
   }
   
   #sbq:focus {
     background: var(--white);
+    border: 1px solid var(--grey-light);
     box-shadow: 0 1px 1px grey;
+  }
+  
+  
+  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) {
+    margin: 0 auto;
+    max-width: 800px;
   }
   
   body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1) {
     position: relative;
   }
-  
-  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1)::after {
+    
+  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1)::before {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/search_black_20dp.png');
     background-position: center;
     background-repeat: no-repeat;
     content: '';
     height: 100%;
+    left: 12px;
     opacity: 0.54;
     position: absolute;
-    right: 12px;
     width: 20px;
+  }
+  
+  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1)::after {
+    color: var(--grey-dark);
+    content: 'Search mail';
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    left: 40px;
+    pointer-events: none;
+    position: absolute;
+    top: 10px;
+  }
+  
+  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1):focus-within::after {
+    display: none;
   }
   
   .search-form-submit {
@@ -305,18 +331,23 @@
     background: none;
   }
   
+  /* Give margin to main body */
+  body > table:nth-of-type(2) tr:nth-of-type(1) td:nth-of-type(2)[valign="top"] {
+    padding-right: 20px;
+  }
+  
   /* Table containing buttons at the top */
   body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type {
-    margin-bottom: 4px;
+/*     margin-bottom: 4px; */
   }
   
   /* Table containing buttons at the bottom */
   body > table:nth-of-type(2) td:nth-of-type(2) table:nth-of-type(3) {
-    margin-top: 4px;
+/*     margin-top: 4px; */
   }
   
   /* Buttons */
-  input[type="submit"] {
+/*   input[type="submit"] {
     background: var(--accent-color);
     border: none;
     border-radius: 4px;
@@ -336,10 +367,31 @@
   
   input[type="submit"]:focus {
     filter: brightness(0.95);
+  } */
+  
+  input[type="submit"] {
+    background: none;
+    border: none;
+    border-radius: 100px;
+    color: rgba(0,0,0,0.65);
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0;
+    padding: 3px 13px;
+    transition: 0.1s;
+  }
+  
+  input[type="submit"]:hover {
+    background: #ededed;
+    color: #222;
+  }
+  
+  input[type="submit"]:focus {
+    filter: brightness(0.8);
   }
   
   /* Dropdown menus */
-  select {    
+/*   select {    
     background-color: var(--white);
     color: var(--grey-dark);
     cursor: pointer;
@@ -348,6 +400,24 @@
     padding: 7px 16px;
     text-transform: uppercase;
     -moz-appearance: none;
+  } */
+  
+  select {
+    background: none;
+    border: none;
+    border-radius: 100px;
+    color: rgba(0,0,0,0.65);
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0;
+    padding: 2px 0 2px 13px;
+    transition: 0.1s;
+    -moz-appearance: none;
+  }
+  
+  select:hover {
+    background: #ededed;
+    color: #222;
   }
   
   /* Refresh button */
@@ -366,7 +436,7 @@
   /* Main mailbox */
   table.th {
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 10px 0;
   }
   
   /* Individual emails */  
@@ -374,8 +444,12 @@
     border: 1px solid var(--grey);
     border-left: none;
     border-right: none;
+    padding: 3px 10px;
+  }
+  
+  table.th tr td * {
     font-family: "Roboto", sans-serif !important;
-    padding: 2px 10px;
+    letter-spacing: .2px;
   }
   
   /* Unread emails */
@@ -396,11 +470,13 @@
   /* Email sender */
   table.th tr td:nth-child(2) {
     padding-left: 0;
+    max-width: 20px;
+    /*! padding-right: 0; */
   }
   
   /* Email subject */
   table.th tr td:nth-child(3) {
-    padding-left: 25px;
+    /*! padding-left: 25px; */
   }
   
   table.th tr td:nth-child(3) [color="#7777CC"] {
