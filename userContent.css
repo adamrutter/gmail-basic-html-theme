@@ -35,6 +35,7 @@
   /* Alerts */
   [role="alert"] {
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0px 2px 4px rgba(0,0,0,0.2);
+/*     background: #fad163 !important; */
     display: block;
     margin: 5px 0;
     padding: 3px;
@@ -136,7 +137,7 @@
     position: absolute;
     top: 10px;
   }
-  
+    
   body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1):focus-within::after {
     display: none;
   }
@@ -336,7 +337,11 @@
   }
   
   /* Remove default backgrounds */
-  [bgcolor="#C3D9FF"], [bgcolor="#CCCCCC"] {
+  [bgcolor="#C3D9FF"], 
+  [bgcolor="#CCCCCC"], 
+  [bgcolor="#FAD163"]:not([role="alert"]),
+  [bgcolor="#74D982"],
+  [bgcolor="#e0ecff"] {
     background: none;
   }
   
