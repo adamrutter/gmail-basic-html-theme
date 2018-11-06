@@ -553,18 +553,49 @@
     display: none;
   }
   
-  /* Starred icon */
-  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/star_on_2.gif"] {
+  table.th tr[bgcolor="#ffffff"] td:nth-of-type(1),
+  table.th tr[bgcolor="#E8EEF7"] td:nth-of-type(1) {
+    white-space: nowrap;
+  }
+  
+  /* Star icon */
+  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/star_on_2.gif"],
+  img[alt="Unstarred"],
+  img[alt="Remove star"] {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
     height: 0;
     margin: 0 0 0 5px;
-    padding: 10px;
+    padding: 8px;
     position: relative;
-    top: 1px;
+    top: 0px;
     width: 0;
+  }
+  
+  img[alt="star"] {
+    display: none;
+  }
+  
+  img[alt="Unstarred"],
+  img[alt="Remove star"] {
+    cursor: pointer;
+    margin: 0;
+    top: 2px;
+  }
+  
+  img[alt="Unstarred"] {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png');
+    opacity: 0.25;
+  }
+  
+  img[alt="Unstarred"]:hover {
+    opacity: 0.65;
+  }
+  
+  img[alt="Remove star"]:hover {
+    filter: brightness(0.85);
   }
   
   /* Email sender */
@@ -631,7 +662,7 @@
     overflow: visible;
   }
 
-    /* Attachment paper clip icon */
+  /* Attachment paper clip icon */
   img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/paperclip.gif"] {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
     background-position: center;
@@ -742,12 +773,14 @@
     color: #222 !important;
   }
   
+  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:focus {
+    filter: brightness(0.8);
+  }
+  
   /* Right hand buttons */
   
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu {
     border-radius: 100px;
-/*     color: rgba(0,0,0,0.65) !important; */
-/*     font-weight: 700; */
     margin: 0;
     padding: 8px 5px;
     position: relative;
@@ -760,6 +793,7 @@
     border-radius: 4px;
     bottom: -30px;
     color: var(--white);
+    display: none;
     font-family: "Roboto", sans-serif !important;
     font-size: 12px !important;
     text-decoration: none !important;
@@ -767,6 +801,7 @@
     position: absolute;
     pointer-events: none;
     white-space: nowrap;
+    z-index: 99;
    }
   
   [bgcolor="#E0ECFF"][cellpadding="2"] table.ac td:nth-child(1) span.u {
@@ -814,13 +849,13 @@
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:hover span {
     display: inline !important;
   }
-  
+  https://mail.google.com/mail/u/0/h/zw95o2w3cy9j/?&th=166459642e204962&d=e&v=c
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:hover img {
     opacity: 0.85;
   }
   
-  [bgcolor="#E0ECFF"][cellpadding="2"] a span {
-    display: none;
+  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:active {
+    background: rgba(0, 0, 0, 0.35);
   }
   
   /* Compose page, individual email pages */
