@@ -8,7 +8,7 @@
     --grey-light: #eeeeee;
     --grey-very-light: #efefef;
     --white: #fafafa;    
-/*     --border-spacing: 3px; */
+/*! --border-spacing: 3px; */
   }
   
   * {
@@ -282,7 +282,8 @@
     background: #fce8e6;
   }
   
-  body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(n+4) td[bgcolor="#C3D9FF"]:first-of-type a {
+  body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(n+4) td[bgcolor="#C3D9FF"]:first-of-type a,
+  body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(n+4) td[bgcolor="#CCCCCC"]:first-of-type a{
     background: var(--grey);
   }
   
@@ -334,8 +335,8 @@
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/settings_black_20dp.png');
   }
   
-  /* Remove default blue background */
-  [bgcolor="#C3D9FF"] {
+  /* Remove default backgrounds */
+  [bgcolor="#C3D9FF"], [bgcolor="#CCCCCC"] {
     background: none;
   }
   
@@ -435,7 +436,7 @@
   
   body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td[align="right"] a.searchPageLink {
     display: block !important;
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
   
   /* Page number */
@@ -458,9 +459,7 @@
   }
   
   table.th tr::after {
-    border: 1px solid var(--grey);
-    border-left: none;
-    border-right: none;
+    border-top: 1px solid var(--grey);
     content: '';
     display: block;
     height: 100%;
@@ -471,13 +470,17 @@
     width: 100%;
   }
   
+  table.th tr:last-child::after {
+    border-bottom: 1px solid var(--grey);
+  }
+  
   table.th tr:hover::after {
     box-shadow: inset 1px 0 0 #dadce0,inset -1px 0 0 #dadce0,0 -1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
     z-index: 99;
   }
   
   table.th tr td {
-/*     border: 1px solid var(--grey);
+/*! border: 1px solid var(--grey); */ /*
     border-left: none;
     border-right: none; */
     padding: 3px 10px;
@@ -510,6 +513,10 @@
   /* Hide empty email row only when there are other emails on the page */
   table.th tr:not(:only-child) td[bgcolor="#ffffff"] {
     display: none;
+  }
+  
+  tr:last-child:not([style])::after {
+    border-bottom: none !important;
   }
   
   
@@ -560,12 +567,13 @@
   
    span.ts {
     display: flex !important;
-/*     white-space: nowrap; */
-/*     overflow: hidden; */
-/*     text-overflow: ellipsis; */
+white-space: nowrap;
+/*! overflow: hidden; */
+text-overflow: ellipsis;
   }  
   
-  span.ts * {
+  span.ts *,
+  span.ts:first-line {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -575,7 +583,7 @@
 /*! background: green !important; */ /*
     color: red !important; */
 /*! flex-grow: 2; */
-/*     flex-shrink: 9999999; */
+/*! flex-shrink: 9999999; */
 /*! width: 100%; */
   }
   
