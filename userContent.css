@@ -307,6 +307,8 @@
     padding-left: 24px;
     text-decoration: none;
     transform: translateX(-12px);
+    /*! overflow: hidden; */
+    white-space: nowrap;
   }
   
   table.l a:hover {
@@ -688,5 +690,35 @@ text-overflow: ellipsis;
   table.ft tr:nth-of-type(3) td {
     display: block;
     margin-top: 25px;
+  }
+  
+  /* Individual email pages */
+  table[width="98%"] {
+    background: teal !important;
+  }
+  
+  /* Compose page, individual email pages */
+  [bgcolor="#e0ecff"] {
+    background: aqua !important;
+  }
+  
+  /* Sent mail page */
+  form[action="?&s=s"] {
+    background: lime !important;
+  }
+  
+  /* Drafts page */
+  form[action="?&s=d"] {
+    background: red !important;
+  }
+  
+  /* Settings page */
+  td[bgcolor="#fff7d7"] {
+    background: yellow !important;
+  }
+  
+  /* Individual label pages */
+  form[action*="?&s=l&l"] {
+    background: magenta !important;
   }
 }
