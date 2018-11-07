@@ -15,6 +15,7 @@
     font-family: "Segoe UI", sans-serif !important;
     font-size: 14px !important;
     /*! margin: 10px; */
+    /*! font-size: 0 !important; */
   }
   
   body {
@@ -167,7 +168,7 @@
     border-radius: 50px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 1px 3px 1px rgba(60,64,67,0.149);
     display: inline-block;
-    margin: 0 0 14px 9px;
+    margin: 0 0 9px 9px;
     padding: 15px 18px 15px 15px;
   }
   
@@ -190,7 +191,7 @@
   
   /* Bottom margin of the Compose Mail button */
   body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(2) {
-    display: none;
+/*     display: none; */
   }
   
   /* Mailbox navigation menu */
@@ -348,7 +349,7 @@
   }
   
   /* Give margin to main body */
-  body > table:nth-of-type(2) tr:nth-of-type(1) td:nth-of-type(2)[valign="top"] {
+  body > table:nth-of-type(2) tr:nth-of-type(1) td:nth-of-type(2)[valign="top"]:not(align="right") {
     padding-right: 20px;
   }
   
@@ -360,7 +361,7 @@
   
   /* Table containing buttons at the bottom */
   body > table:nth-of-type(2) td:nth-of-type(2) table:nth-of-type(3) {
-/*     margin-top: 4px; */
+/*! margin-top: 4px; */
   }
   
   /* Buttons */
@@ -736,6 +737,23 @@
   }
   
   /* Individual email pages */
+  
+  /* Pad the main body */
+  [bgcolor="#efefef"][cellpadding="1"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  body > table:nth-of-type(2) td:nth-of-type(2) table[align="center"][border="0"][cellpadding="0"][cellspacing="0"][width="98%"] {
+    margin-top: 10px;
+    padding: 0 24px;
+  }
+  
+  td[align="right"] > table.ac {
+    padding-right: 12px;
+  }
+  
+  /* Heading/labels*/
   table[width="98%"] tr:nth-of-type(1) td:nth-of-type(1) h2 * {
     font-size: 20px !important;
   }
@@ -753,8 +771,7 @@
     font-size: 0.85em !important;
   }
   
-  /* Back to inbox */
-  
+  /* Back to inbox */  
   [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink {
     background: none;
     border: none;
@@ -778,7 +795,6 @@
   }
   
   /* Right hand buttons */
-  
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu {
     border-radius: 100px;
     margin: 0;
@@ -791,7 +807,7 @@
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu span {
     background: rgba(0, 0, 0, 0.65);
     border-radius: 4px;
-    bottom: -30px;
+    bottom: -27px;
     color: var(--white);
     display: none;
     font-family: "Roboto", sans-serif !important;
@@ -856,6 +872,77 @@
   
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:active {
     background: rgba(0, 0, 0, 0.35);
+  }
+  
+  /* Email details */  
+  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] {
+    background: none;
+    border-bottom: 1px solid var(--grey);
+    font-family: "Roboto", sans-serif !important;
+    padding: 20px 0px;
+  }
+  
+  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] td,
+  :not(div) [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] font *:not(a) {
+    color: var(--black);
+    font-family: "Roboto", sans-serif !important;
+    letter-spacing: 0.02em;
+  }
+  
+  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] td:first-child img {
+    margin-right: 5px;
+  }
+  
+  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child,
+  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) {
+    color: var(--grey-dark);
+    font-size: 12px !important;
+  }
+  
+  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child {
+    line-height: 30px
+  }
+  
+  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) {
+    line-height: 0px;
+    padding-bottom: 15px;
+  }
+  
+  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child h3 {
+    margin-right: 5px;
+  }
+  
+  /* Reply to email controls */
+  td[colspan="2"] .r {
+    margin: 0 -18px 20px -18px;  
+  }
+  
+  td[colspan="2"] .r > font:nth-child(1) {
+    font-size: 0 !important;
+    line-height: 22px;
+  }
+  
+  td[colspan="2"] .r > font:nth-child(1) a {
+    background: none;
+    border: none;
+    border-radius: 100px;
+    color: rgba(0,0,0,0.65) !important;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 5px;
+    padding: 3px 13px;
+    text-decoration: none;
+    transition: 0.1s;
+    white-space: nowrap;
+  }
+  
+  td[colspan="2"] .r > font:nth-child(1) a:hover {
+    background: #ededed;
+    color: #222;
+  }
+  
+  td[colspan="2"] .r > font:nth-child(1) a:focus {
+    filter: brightness(0.8);
   }
   
   /* Compose page, individual email pages */
