@@ -349,7 +349,11 @@
   }
   
   /* Give margin to main body */
-  body > table:nth-of-type(2) tr:nth-of-type(1) td:nth-of-type(2)[valign="top"]:not(align="right") {
+  body > table:nth-of-type(2) tr:nth-of-type(1) td:nth-of-type(2)[valign="top"] {
+/*     padding-right: 20px; */
+  }
+  
+  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
     padding-right: 20px;
   }
   
@@ -398,6 +402,7 @@
     padding: 3px 13px;
     transition: 0.1s;
     /*! margin-left: -7px; */
+    /*! margin-bottom: -3px; */
   }
   
   input[type="submit"]:hover {
@@ -562,7 +567,8 @@
   /* Star icon */
   img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/star_on_2.gif"],
   img[alt="Unstarred"],
-  img[alt="Remove star"] {
+  img[alt="Remove star"],
+  img[alt="Add star"] {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -580,18 +586,21 @@
   }
   
   img[alt="Unstarred"],
-  img[alt="Remove star"] {
+  img[alt="Remove star"],
+  img[alt="Add star"] {
     cursor: pointer;
     margin: 0;
     top: 2px;
   }
   
-  img[alt="Unstarred"] {
+  img[alt="Unstarred"],
+  img[alt="Add star"] {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png');
     opacity: 0.25;
   }
   
-  img[alt="Unstarred"]:hover {
+  img[alt="Unstarred"]:hover,
+  img[alt="Add star"]:hover {
     opacity: 0.65;
   }
   
@@ -746,7 +755,7 @@
   
   body > table:nth-of-type(2) td:nth-of-type(2) table[align="center"][border="0"][cellpadding="0"][cellspacing="0"][width="98%"] {
     margin-bottom: 10px;
-    padding: 0 24px;
+    padding: 0 17px;
   }
   
   td[align="right"] > table.ac {
@@ -900,9 +909,11 @@
   }
   
   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child,
-  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) {
+  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1),
+  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] tr td {
     color: var(--grey-dark);
     font-size: 12px !important;
+/*     background: magenta; */
   }
   
   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child {
@@ -914,13 +925,20 @@
     padding-bottom: 15px;
   }
   
-  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child h3 {
+/*   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child h3 {
+    margin-right: 5px;
+  } */
+  
+  h3 > a > font:nth-child(1) > b:nth-child(1),
+  h3 > font:nth-child(1) > b:nth-child(1) {
     margin-right: 5px;
   }
   
   /* Reply to email controls */
   td[colspan="2"] .r {
     margin: 0 -18px 5px -18px;  
+    border-bottom: 1px solid var(--grey);
+    padding-bottom: 15px;
   }
   
   td[colspan="2"] .r > font:nth-child(1) {
@@ -951,14 +969,23 @@
     filter: brightness(0.8);
   }
   
+  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] td[colspan="2"] font[size="1"] {
+    background: red;
+  }
+  
   /* Email message */
   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(4) {
-    background: none;
+/*     background: none; */
   }
   
   .msg {
+    background: var(--white);
+    border: 1px solid var(--white);
+    color: initial !important;
+    margin: -1px;
     padding-bottom: 20px;
     padding-left: 0;
+    padding: 30px 0;
   }
   
   /* Quick reply */
@@ -970,7 +997,9 @@
     padding: 30px;
   }
   
-  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1):hover {
+  
+  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1):hover,
+  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1):focus-within {
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
   }
   
@@ -978,8 +1007,9 @@
     display: none;
   }
     
-  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > b:nth-child(1) {
-    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/reply_black_20dp.png');
+  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > b:nth-child(1),
+  label[for="reply"] b,
+  label[for="replyall"] b{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
@@ -987,12 +1017,23 @@
     float: left;
     font-size: 0 !important;
     height: 20px;
-    margin-right: 8px;
+    margin-right: 6px;
     opacity: 0.5;
     width: 20px;
   }
   
-  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > b:nth-child(1), 
+  label[for="reply"] b {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/reply_black_20dp.png');
+  }
+  
+  label[for="replyall"] b {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/reply_all_black_20dp.png');
+  }
+  
+  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
+  label[for="reply"],
+  label[for="replyall"] {
     color: var(--grey-dark);
   }
   
@@ -1014,6 +1055,34 @@
     border-radius: 5px;
     color: white;
     padding: 8px 20px;
+  }
+  
+  input[name="nvp_bu_send"]:hover {
+    background: #1a73e8;
+    box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
+    color: white;
+    filter: brightness(1.07);
+  }
+  
+  input[name="nvp_bu_send"]:focus {
+    filter: brightness(0.9);
+  }
+  
+  .qr input[type="submit"] {
+    margin-bottom: -3px;
+  }
+  
+  input#haot {
+    position: relative;
+    top: 2px;
+  }
+  
+  label[for="haot"] {
+    color: var(--grey-dark);
+  }
+  
+  input#haot:hover + label[for="haot"] {
+    color: var(--black);
   }
   
   /* Compose page, individual email pages */
