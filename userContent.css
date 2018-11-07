@@ -939,6 +939,7 @@
     margin: 0 -18px 5px -18px;  
     border-bottom: 1px solid var(--grey);
     padding-bottom: 15px;
+    padding: 25px 0;
   }
   
   td[colspan="2"] .r > font:nth-child(1) {
