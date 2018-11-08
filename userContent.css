@@ -1056,6 +1056,7 @@
     border-radius: 5px;
     color: white;
     padding: 8px 20px;
+    margin-right: 10px;
   }
   
   input[name="nvp_bu_send"]:hover {
@@ -1097,13 +1098,37 @@
     display: flex;
     flex-direction: column;
   }
+  
+  .compose tr:nth-child(1) {
+    order: -99;
+  }
+  
+  .compose tr:nth-child(2) {
+    order: -98;
+  }
+  
+  .compose tr:nth-child(3) {
+    order: -97;
+  }
+  
+  .compose tr:nth-child(4) {
+    order: -96;
+  }
 
   .compose tr:nth-child(6) {
-    order: 98;
+    /*! order: 98; */
   }
   
    .compose tr:nth-child(7) {
-    order: 99;
+    /*! order: 99; */
+  }
+  
+  .compose tr:last-child {
+    order: -95;
+  }
+  
+  .compose tr td:last-child {
+    display: block;
   }
   
   .compose textarea,
@@ -1113,14 +1138,17 @@
     border: none;
     border-bottom: 1px solid var(--grey);
     color: var(--black);
-    padding-bottom: 6px;
+    padding-bottom: 14px;
     padding-top: 2px;
     /*! width: 100%; */
   }
   
   /* Pad the main body */
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#e0ecff"] form[name="f"][enctype="multipart/form-data"][method="POST"] {
+    margin: 0 auto;
+    max-width: 650px;
     padding: 30px 10px;
+    /*! margin-left: 0; */
   }
   
   /* Send, draft, discard buttons at the top */
@@ -1131,6 +1159,8 @@
   /* Send, draft, discard buttons at the bottom */
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type {
     
+  margin-top: 35px;
+  padding: 0 9px;
   }
   
   /* Restrict the width of the input areas */
@@ -1169,14 +1199,18 @@
   }
   
   .compose tr:nth-child(6) td:last-child::before {
-    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
+    /*! background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
-    content: '';
-    display: inline-block;
-    height: 20px;
-    width: 20px;
+    /*! content: ''; */
+    /*! display: inline-block; */
+    /*! height: 20px; */
+    /*! width: 20px; */
+    content: 'Attachments';
+    display: block;
+    width: 100%;
+    margin: 25px 0;
   }
   
   /* Email inputs; to, cc, bcc, subject */
@@ -1198,6 +1232,7 @@
   .compose tr:nth-child(-n+4) td:last-child textarea {
     padding-left: 32px;
     padding-right: 32px;
+    height: 40px;
   }
   
   .compose tr:nth-child(-n+4) td:last-child input {
@@ -1218,27 +1253,60 @@
   }
   
   .compose tr:nth-child(6) {
-    
+    color: var(--grey-dark);
+    padding-bottom: 20px;
+    padding-top: 15px;
+  }
+  
+  .compose tr:nth-child(6) * {
+    position: relative;
+    left: 2px;
+  }
+  
+  .compose tr:nth-child(6) input[type="checkbox"] {
+    position: relative;
+    top: 2px;
   }
   
   .compose tr:nth-child(6) td:last-child::before {
-    margin-right: 6px;
-    opacity: 0.54;
+    /*! margin-right: 6px; */
+    /*! opacity: 0.54; */
     position: relative;
-    top: 4px;
+    /*! top: 4px; */
+    left: 7px;
+    color: var(--grey-dark);
+  }
+  
+  .compose tr:nth-child(8) input[type="submit"] {
+    left: -5px;
+    position: relative;
   }
   
   .compose tr:nth-child(7) {
-     
+     padding: 0 0 12px 0;
   }
   
   .compose tr:nth-child(7) td:last-child {
-    float: right;
+    /*! float: right; */
     position: relative;
-    text-align: right;
-    top: -2.15em;
-    visibility: visible;
-    z-index: 99;
+    /*! text-align: right; */
+    /*! top: calc(-2.15em + 1px); */
+    /*! visibility: visible; */
+    /*! z-index: 99; */
+    margin: 10px 0;
+    padding-left: 11px;
+  }
+  
+  /* Main email input */
+  .compose tr:nth-child(8) {
+    padding-bottom: 30px;
+    /*! padding-top: 30px; */
+    border-bottom: 1px solid var(--grey);
+  }
+  
+  .compose textarea[aria-label="Message Body"] {
+    /*! border: 1px solid var(--grey); */
+    /*! border-radius: 8px; */
   }
   
   /* Sent mail page */
