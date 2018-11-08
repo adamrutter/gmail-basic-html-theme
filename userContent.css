@@ -1148,8 +1148,8 @@
   /* Buttons at the bottom */
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type {
     border-top: 1px solid var(--grey);
-    margin-top: 40px;
-    padding: 49px 9px 0 9px;
+    margin-top: 30px;
+    padding: 30px 9px 0 9px;
   }
 
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type td:first-of-type {
@@ -1209,9 +1209,10 @@
     content: 'Attachments';
     display: block;
     left: 7px;
-    margin: 35px 0;
+    margin: 34px 0 34px 0;
     position: relative;
     width: 100%;
+    /*! padding-bottom: 30px; */
   }
 
   /* To, Cc, Bcc, Subject */
@@ -1255,8 +1256,8 @@
 
   .compose tr:nth-child(6) {
     color: var(--grey-dark);
-    padding-bottom: 32px;
-    padding-top: 15px;
+    /*! padding-bottom: 30px; */
+    /*! padding-top: 15px; */
   }
 
   .compose tr:nth-child(6) * {
@@ -1269,9 +1270,16 @@
     top: 2px;
   }
 
+  .compose tr:nth-child(6) input[type="checkbox"]:last-of-type {
+    margin-bottom: 30px;
+  }
+  
   .compose input[aria-label="Attach File"] {
-    left: 8px;
+    left: 7px;
     position: relative;
+    margin: 0 0 27px 0;
+    /*! display: inherit; */
+    /*! padding-top: 30px; */
   }
 
   .compose input[value="Attach More Files"] {
@@ -1280,12 +1288,12 @@
   }
 
   .compose tr:nth-child(7) {
-     padding: 0 0 25px 0;
+     /*! padding: 0 0 25px 0; */
   }
 
   /* Main email input */
   .compose tr:nth-child(8) {
-    padding-bottom: 5px;
+    /*! padding-bottom: 5px; */
   }
 
   .compose textarea[aria-label="Message Body"] {
