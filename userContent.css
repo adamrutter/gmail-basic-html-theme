@@ -1160,7 +1160,8 @@
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type {
     
   margin-top: 35px;
-  padding: 0 9px;
+  padding: 49px 0 9px 0;
+  border-top: 1px solid var(--grey);
   }
   
   /* Restrict the width of the input areas */
@@ -1268,18 +1269,28 @@
     top: 2px;
   }
   
+  .compose input[aria-label="Attach File"] {
+    position: relative;
+    left: 7px;
+  }
+  
+  .compose input[value="Attach More Files"] {
+    position: relative;
+    left: -13px;
+  }
+  
   .compose tr:nth-child(6) td:last-child::before {
     /*! margin-right: 6px; */
     /*! opacity: 0.54; */
     position: relative;
     /*! top: 4px; */
     left: 7px;
-    color: var(--grey-dark);
+/*     color: var(--grey-dark); */
   }
   
-  .compose tr:nth-child(8) input[type="submit"] {
-    left: -5px;
-    position: relative;
+  .compose tr:nth-child(7) input[type="submit"] {
+/*     left: -5px; */
+/*     position: relative; */
   }
   
   .compose tr:nth-child(7) {
@@ -1293,15 +1304,15 @@
     /*! top: calc(-2.15em + 1px); */
     /*! visibility: visible; */
     /*! z-index: 99; */
-    margin: 10px 0;
+    /*! margin: 10px 0; */
     padding-left: 11px;
   }
   
   /* Main email input */
   .compose tr:nth-child(8) {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     /*! padding-top: 30px; */
-    border-bottom: 1px solid var(--grey);
+    /*! border-bottom: 1px solid var(--grey); */
   }
   
   .compose textarea[aria-label="Message Body"] {
