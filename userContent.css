@@ -1091,6 +1091,156 @@
 /*! background: aqua !important; */
   }
   
+  
+  /* Reorder the input fields */
+  .compose tbody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .compose tr:nth-child(6) {
+    order: 98;
+  }
+  
+   .compose tr:nth-child(7) {
+    order: 99;
+  }
+  
+  .compose textarea,
+  .compose input[type="text"] {
+    background: none;
+    /*! background: red; */
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    color: var(--black);
+    padding-bottom: 6px;
+    padding-top: 2px;
+    /*! width: 100%; */
+  }
+  
+  /* Pad the main body */
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#e0ecff"] form[name="f"][enctype="multipart/form-data"][method="POST"] {
+    padding: 30px 10px;
+  }
+  
+  /* Send, draft, discard buttons at the top */
+  form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:first-of-type {
+    display: none;
+  }
+  
+  /* Send, draft, discard buttons at the bottom */
+  form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type {
+    
+  }
+  
+  /* Restrict the width of the input areas */
+  .compose .i,
+  .compose .mi {
+    width: 100%;
+  }
+  
+  /* Hide first column to the compose table and add back in elements */
+  .compose tr {
+    position: relative;
+  }
+  
+  .compose tr td:first-child {
+    display: none;
+  }
+  
+/*   .compose tr:nth-child(-n+4):focus-within td:last-child::before {
+    display: none;
+  } */
+  
+  .compose tr:nth-child(1) td:last-child::before {
+    content: 'To';
+  }
+  
+  .compose tr:nth-child(2) td:last-child::before {
+    content: 'Cc';
+  }
+  
+  .compose tr:nth-child(3) td:last-child::before {
+    content: 'Bcc';
+  }
+  
+  .compose tr:nth-child(4) td:last-child::before {
+    content: 'Subject';
+  }
+  
+  .compose tr:nth-child(6) td:last-child::before {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+  }
+  
+  /* Email inputs; to, cc, bcc, subject */
+  .compose tr:nth-child(-n+4) td:last-child {
+    padding-bottom: 24px;
+  }
+  
+  .compose tr:nth-child(-n+4) td:last-child::before {
+    color: var(--grey-dark);
+    position: absolute;
+    left: 10px;
+    top: 4px;
+  }
+  
+  .compose tr:nth-child(1) td:last-child::before {
+    top: 5px;
+  }
+  
+  .compose tr:nth-child(-n+4) td:last-child textarea {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+  .compose tr:nth-child(-n+4) td:last-child input {
+    padding-left: 32px;
+  }
+  
+  .compose tr:nth-child(3) td:last-child input {
+    padding-left: calc(32px + 5px);
+  }
+  
+  .compose tr:nth-child(4) td:last-child input {
+    padding-left: calc(32px + 28px);
+  }
+  
+  /* Attachments */
+  .compose tr:nth-child(5) {
+    display: none;
+  }
+  
+  .compose tr:nth-child(6) {
+    
+  }
+  
+  .compose tr:nth-child(6) td:last-child::before {
+    margin-right: 6px;
+    opacity: 0.54;
+    position: relative;
+    top: 4px;
+  }
+  
+  .compose tr:nth-child(7) {
+     
+  }
+  
+  .compose tr:nth-child(7) td:last-child {
+    float: right;
+    position: relative;
+    text-align: right;
+    top: -2.15em;
+    visibility: visible;
+    z-index: 99;
+  }
+  
   /* Sent mail page */
   form[action="?&s=s"] {
     background: lime !important;
