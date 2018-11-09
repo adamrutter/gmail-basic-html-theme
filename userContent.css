@@ -1299,6 +1299,66 @@
   .compose textarea[aria-label="Message Body"] {
     padding: 0 8px;
   }
+  
+  /* Attach more files pages */
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) {
+    background: none;
+  }
+  
+  /* Buttons at the top */
+  td[bgcolor="#eoecff"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#c3d9ff"]:first-child {
+    display: none;
+  }
+  
+  /* Heading */
+  td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] {
+    padding-bottom: 25px;
+    padding-top: 25px;
+  }
+  
+  td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] td br {
+    margin-bottom: 15px;
+  }
+  
+  td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] td font b {
+    font-size: 1.25em !important;
+  }
+  
+  /* Main attach files table */
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:not(:last-child) td {
+    padding: 6px 0;
+  }
+  
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:not(:last-child) td:first-child {
+    padding-left: 2px;
+    padding-right: 15px;
+    text-align: left;
+    width: 0;
+  }
+  
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:last-child td:first-child {
+    display: none;
+    width: 0;
+  }
+  
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:last-child td:last-child {
+    height: 53px;
+    padding-top: 25px;
+    position: relative;
+  }
+  
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:last-child td:last-child input[type="submit"] {
+    left: -11px;
+    margin-top: 25px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Buttons at the bottom */
+  td[bgcolor="#eoecff"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#c3d9ff"]:last-child {
+    margin-left: -14px;
+    padding-top: 25px;
+  }
 
   /* Sent mail page */
   form[action="?&s=s"] {
