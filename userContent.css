@@ -1396,6 +1396,7 @@
     background: none;
   }
   
+  /* Heading and nav */
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-child td {
     padding: 15px 0;
   }
@@ -1404,10 +1405,100 @@
     font-size: 18px !important;
   }
   
-  td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li {
+  td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) td {
+    padding-bottom: 25px;
+  }
+  
+  td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li a {
+    color: var(--grey-dark) !important;
+    text-decoration: none;
+    padding: 0 3px;
+  }
+  
+  td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li.on {
     background: none;
-    border-bottom: 1px solid var(--blue);
+    border-bottom: 2px solid var(--blue);
     color: var(--blue);
+    padding-bottom: 10px;
+  }
+  
+  /* Main table */
+  .prf {
+/*     background: red; */
+  }
+  
+  .prf > table > tbody > tr:not(:last-child) > td {
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    padding-bottom: 25px;
+    padding-top: 25px;
+  }
+  
+  .prf > table > tbody > tr:last-child > td {
+    padding-top: 30px;
+    
+  }
+  
+  .prf input[type="submit"][value="Save Changes"] {
+    background: var(--blue);
+    color: white;
+    margin-left: 15px;
+  }
+  
+  .prf input[type="submit"][value="Save Changes"]:hover {
+    box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
+    filter: brightness(1.07);
+  }
+  
+  .prf input[type="submit"][value="Save Changes"]:focus {
+    filter: brightness(0.9);
+  }
+  
+  .prf tr td:nth-child(2) {
+    /*! padding-left: 30px; */
+  }
+  
+  .prf span.s {
+    color: var(--grey-dark) !important;;
+    font-size: 12px !important;
+  }
+  
+  .prf select {
+    display: block;
+    background: var(--grey);
+    position: relative;
+    left: -12px; 
+  }
+  
+  .prf input[type="radio"] {
+    margin-bottom: 10px;
+    margin-right: 5px;
+  }
+  
+  .prf input[type="text"] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    color: var(--black);
+    margin: 0 0 15px 0;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    position: relative;
+    top: -1px;
+  }
+  
+  .prf textarea {
+    background: none;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    color: var(--black);
+    padding: 10px;
+    /*! margin: 0 10px; */
+  }
+  
+  .prf textarea:hover,
+  .prf textarea:focus {
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
   }
 
   /* Individual label pages */
