@@ -1,6 +1,7 @@
 @-moz-document url-prefix(https://mail.google.com/mail/u/0/h) {
   html {
     --accent-color: #ee6e73;
+    --blue: #1a73e8;
     --black: #222;
     --grey-very-dark: #424242;
     --grey-dark: #666;
@@ -37,9 +38,16 @@
   [role="alert"] {
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0px 2px 4px rgba(0,0,0,0.2);
 /*     background: #fad163 !important; */
-    display: block;
-    margin: 5px 0;
-    padding: 3px;
+    /*! display: block; */
+    /*! margin: 5px 0; */
+    /*! padding: 3px; */
+    /*! position: absolute; */
+    /*! left: 0; */
+    /*! z-index: 99; */
+    /*! right: 0; */
+    /*! margin: auto; */
+    /*! float: left; */
+    /*! top: 0; */
   }
 
   /* Nav bar for other Google services at the top of the screen */
@@ -109,7 +117,7 @@
 
   body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) {
     margin: 0 auto;
-    max-width: 800px;
+    /*! max-width: 800px; */
   }
 
   body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1) {
@@ -276,6 +284,10 @@
 
   table.m tr:nth-of-type(11) a::before {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/person_black_20dp.png');
+  }
+  
+  table.m a[href="?&v=cl"] {
+    display: none !important;
   }
 
   /* Current mailbox */
@@ -787,7 +799,7 @@
     border: none;
     border-radius: 100px;
     color: rgba(0,0,0,0.65) !important;
-    display: inline !important;
+    /*! display: inline !important; */
     font-weight: 700;
     margin: 0;
     padding: 3px 13px;
@@ -1053,7 +1065,7 @@
   }
 
   input[name="nvp_bu_send"] {
-    background: #1a73e8;
+    background: var(--blue);
     border-radius: 5px;
     color: white;
     padding: 8px 20px;
@@ -1062,7 +1074,7 @@
   }
 
   input[name="nvp_bu_send"]:hover {
-    background: #1a73e8;
+    background: var(--blue);
     box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
     color: white;
     filter: brightness(1.07);
@@ -1361,22 +1373,95 @@
   }
 
   /* Sent mail page */
-  form[action="?&s=s"] {
+/*   form[action="?&s=s"] {
     background: lime !important;
+  } */
+  
+  form[action="?&s=s"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"] td:first-child h2 {
+    display: none;
   }
 
   /* Drafts page */
-  form[action="?&s=d"] {
+/*   form[action="?&s=d"] {
     background: red !important;
+  } */
+  
+  form[action="?&s=d"] a[href="?&s=d"] {
+    display: none;
   }
 
   /* Settings page */
   td[bgcolor="#fff7d7"] {
-    background: yellow !important;
+/*     background: yellow !important; */
+    background: none;
+  }
+  
+  td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-child td {
+    padding: 15px 0;
+  }
+  
+  td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] h2 {
+    font-size: 18px !important;
+  }
+  
+  td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li {
+    background: none;
+    border-bottom: 1px solid var(--blue);
+    color: var(--blue);
   }
 
   /* Individual label pages */
-  form[action*="?&s=l&l"] {
+/*   form[action*="?&s=l&l"] {
     background: magenta !important;
+  } */
+  
+  /* Search options page */
+  td[bgcolor="#b5edbc"] {
+    background: none;
+  }
+  
+  td[bgcolor="#b5edbc"] table[bgcolor="#74d982"] {
+    padding: 25px 0;
+  }
+  
+  td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) td {
+    color: var(--grey-dark);
+    padding: 10px 5px;
+  }
+  
+  td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) input[type="text"] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    color: var(--black);
+    padding-bottom: 5px;
+    padding-left: 5px;
+    position: relative;
+    top: 3px;
+  }
+  
+  td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) select {
+    color: var(--black);
+  }
+  
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h {
+    padding-top: 15px;
+  }
+  
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"] {
+    background: var(--blue);
+    border-radius: 5px;
+    color: white;
+    margin-right: 15px;
+    padding: 8px 20px;
+  }
+  
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:hover {
+    box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
+    filter: brightness(1.07);
+  }
+  
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:focus {
+    filter: brightness(0.9);
   }
 }
