@@ -1,6 +1,11 @@
+/* ---------------------- */
+/* Gmail Basic HTML Theme */
+/* ---------------------- */
 @-moz-document url-prefix(https://mail.google.com/mail/u/0/h) {
   html {
-    --accent-color: #ee6e73;
+
+    /* Colours */
+    --red: #f44336;
     --blue: #1a73e8;
     --black: #222;
     --grey-very-dark: #424242;
@@ -9,22 +14,26 @@
     --grey-light: #eeeeee;
     --grey-very-light: #efefef;
     --white: #fafafa;
-/*! --border-spacing: 3px; */
   }
 
+  /* Fonts */
   * {
-    font-family: "Segoe UI", sans-serif !important;
-    font-size: 14px !important;
-    /*! margin: 10px; */
-    /*! font-size: 0 !important; */
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
   }
 
-  body {
-    background: var(--white);
-    color: var(--black);
+  #sbq,
+  body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1)::after,
+  table.th tr td *,
+  table.th tr td:nth-child(2),
+  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu span ,
+  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"],
+  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] td,
+  :not(div) [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] font *:not(a) {
+    font-family: "Roboto", sans-serif !important;
   }
 
-  /* Links */
+  /* Elements */
   a {
     color: var(--black) !important;
     text-decoration: none;
@@ -34,21 +43,192 @@
     text-decoration: underline;
   }
 
-  /* Alerts */
-  [role="alert"] {
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0px 2px 4px rgba(0,0,0,0.2);
-/*     background: #fad163 !important; */
-    /*! display: block; */
-    /*! margin: 5px 0; */
-    /*! padding: 3px; */
-    /*! position: absolute; */
-    /*! left: 0; */
-    /*! z-index: 99; */
-    /*! right: 0; */
-    /*! margin: auto; */
-    /*! float: left; */
-    /*! top: 0; */
+  body {
+    background: var(--white);
+    color: var(--black);
   }
+
+  input[type="text"] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    color: var(--black);
+    padding: 0 5px 4px 5px;
+  }
+
+  .prf input[type="radio"] {
+    margin: 10px 5px;
+  }
+
+  select {
+    background: none;
+    background: var(--grey);
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/expand_more_black_20dp.png');
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    border: none;
+    border-radius: 100px;
+    color: rgba(0,0,0,0.65);
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0;
+    padding: 2px 20px 2px 8px;
+    position: relative;
+    transition: 0.1s;
+    -moz-appearance: none;
+  }
+
+  select:hover {
+    color: #222;
+  }
+
+  textarea {
+    background: none;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    color: var(--black);
+    padding: 10px;
+  }
+
+  textarea:hover,
+  textarea:focus {
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
+  }
+
+  /* ---------------- */
+  /* Reusable modules */
+  /* ---------------- */
+
+  /* Buttons */
+  input[type="submit"],
+  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink,
+  td[colspan="2"] .r > font:nth-child(1) a {
+    background: none;
+    border: none;
+    border-radius: 100px;
+    color: rgba(0,0,0,0.65) !important;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0;
+    padding: 3px 13px;
+    /* position: relative; */
+    text-decoration: none;
+    transition: 0.1s;
+  }
+
+  input[type="submit"]:hover,
+  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:hover,
+  td[colspan="2"] .r > font:nth-child(1) a:hover {
+    background: #ededed;
+    color: #222 !important;
+  }
+
+  input[type="submit"]:focus,
+  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:focus,
+  td[colspan="2"] .r > font:nth-child(1) a:focus {
+    filter: brightness(0.8);
+  }
+  /* Call to action button */
+  input[name="nvp_bu_send"],
+  .prf input[type="submit"][value="Save Changes"],
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"] {
+    background: var(--blue);
+    color: white;
+  }
+
+  input[name="nvp_bu_send"]:hover,
+  .prf input[type="submit"][value="Save Changes"]:hover,
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:hover {
+    background: var(--blue);
+    box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
+    color: white;
+    filter: brightness(1.07);
+  }
+
+  input[name="nvp_bu_send"]:focus,
+  .prf input[type="submit"][value="Save Changes"]:focus,
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:focus {
+    filter: brightness(0.9);
+  }
+
+  /* Delete button */
+  table[summary="labels settings"] input[type="submit"][value="Remove"]:hover {
+    background: var(--red);
+    color: white;
+  }
+
+  /* Star icon */
+  img[alt="star"] {
+    display: none;
+  }
+
+  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/star_on_2.gif"],
+  img[alt="Unstarred"],
+  img[alt="Remove star"],
+  img[alt="Add star"] {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 0;
+    margin: 0 0 0 5px;
+    padding: 8px;
+    position: relative;
+    top: 0px;
+    width: 0;
+  }
+
+  img[alt="Unstarred"],
+  img[alt="Remove star"],
+  img[alt="Add star"] {
+    cursor: pointer;
+    margin: 0;
+    top: 2px;
+  }
+
+  img[alt="Unstarred"],
+  img[alt="Add star"] {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png');
+    opacity: 0.25;
+  }
+
+  img[alt="Unstarred"]:hover,
+  img[alt="Add star"]:hover {
+    opacity: 0.65;
+  }
+
+  img[alt="Remove star"]:hover {
+    filter: brightness(0.85);
+  }
+
+  /* Attachment paper clip icon */
+  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/paperclip.gif"] {
+    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 20px;
+    margin: 0 10px;
+    object-position: -20px;
+    opacity: 0.54;
+    width: 20px;
+  }
+
+  /* Remove default backgrounds */
+  [bgcolor="#C3D9FF"],
+  [bgcolor="#CCCCCC"],
+  [bgcolor="#FAD163"]:not([role="alert"]),
+  [bgcolor="#74D982"],
+  [bgcolor="#e0ecff"],
+  td[bgcolor="#fff7d7"],
+  td[bgcolor="#b5edbc"],
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) {
+    background: none;
+  }
+
+  /* ------ */
+  /* Header */
+  /* ------ */
 
   /* Nav bar for other Google services at the top of the screen */
   #gbar {
@@ -68,7 +248,6 @@
   }
 
   a.gb4:hover {
-/*     color: black !important; */
     text-decoration: underline !important;
   }
 
@@ -100,12 +279,10 @@
     border: 1px solid var(--grey-very-light);
     border-radius: 4px;
     color: var(--black);
-    font-family: "Roboto", sans-serif !important;
     padding: 10px;
     padding-left: 40px;
     transition: 0.1s;
     width: 100%;
-    /*! height: 100%; */
   }
 
   #sbq:focus {
@@ -117,7 +294,6 @@
 
   body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) {
     margin: 0 auto;
-    /*! max-width: 800px; */
   }
 
   body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1) {
@@ -139,7 +315,6 @@
   body > table:nth-of-type(1) tr:nth-of-type(2) td:nth-of-type(1) table:nth-of-type(1) tr:nth-of-type(1) td:nth-of-type(1)::after {
     color: var(--grey-dark);
     content: 'Search mail';
-    font-family: "Roboto", sans-serif;
     font-size: 16px;
     left: 40px;
     pointer-events: none;
@@ -167,9 +342,25 @@
     color: var(--grey-dark) !important;
   }
 
-  body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a:hover {
-/*     color: var(--black) !important; */
+  /* Alert dialog */
+  [role="alert"] {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0px 2px 4px rgba(0,0,0,0.2);
+    /* background: #fad163 !important;
+    display: block;
+    margin: 5px 0;
+    padding: 3px;
+    position: absolute;
+    left: 0;
+    z-index: 99;
+    right: 0;
+    margin: auto;
+    float: left;
+    top: 0; */
   }
+
+  /* ------- */
+  /* Sidebar */
+  /* ------- */
 
   /* Compose Mail button */
   a[accesskey="c"] {
@@ -197,11 +388,6 @@
     padding: 17px;
   }
 
-  /* Bottom margin of the Compose Mail button */
-  body > table:nth-of-type(2) td:nth-of-type(1) table tr:nth-of-type(2) {
-/*     display: none; */
-  }
-
   /* Mailbox navigation menu */
   body > table:nth-of-type(2) td[width="120"] {
     width: 250px;
@@ -218,8 +404,6 @@
   table.m tr:nth-of-type(n+3) a {
     border-radius: 20px !important;
     display: block;
-/*     font-family: "Roboto", sans-serif !important; */
-/*     font-size: 0.98em !important; */
     padding: 2px 15px;
     padding-left: 28px;
     text-decoration: none;
@@ -285,7 +469,7 @@
   table.m tr:nth-of-type(11) a::before {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/person_black_20dp.png');
   }
-  
+
   table.m a[href="?&v=cl"] {
     display: none !important;
   }
@@ -320,7 +504,6 @@
     padding-left: 24px;
     text-decoration: none;
     transform: translateX(-12px);
-    /*! overflow: hidden; */
     white-space: nowrap;
   }
 
@@ -350,124 +533,18 @@
   table.l .ml::before {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/settings_black_20dp.png');
   }
+  /* ------- */
+  /* Mailbox */
+  /* ------- */
 
-  /* Remove default backgrounds */
-  [bgcolor="#C3D9FF"],
-  [bgcolor="#CCCCCC"],
-  [bgcolor="#FAD163"]:not([role="alert"]),
-  [bgcolor="#74D982"],
-  [bgcolor="#e0ecff"] {
-    background: none;
-  }
-
-  /* Give margin to main body */
-  body > table:nth-of-type(2) tr:nth-of-type(1) td:nth-of-type(2)[valign="top"] {
-/*     padding-right: 20px; */
-  }
-
+  /* Give a margin to main body */
   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
     padding-right: 20px;
   }
 
-  /* Table containing buttons at the top */
-  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type {
-/*     margin-bottom: 4px; */
-/*! position: relative; */
-  }
-
-  /* Table containing buttons at the bottom */
-  body > table:nth-of-type(2) td:nth-of-type(2) table:nth-of-type(3) {
-/*! margin-top: 4px; */
-  }
-
-  /* Buttons */
-/*   input[type="submit"] {
-    background: var(--accent-color);
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-    color: white;
-    cursor: pointer;
-    letter-spacing: .5px;
-    margin: 4px 0;
-    padding: 8px 16px;
-    text-transform: uppercase;
-  }
-
-  input[type="submit"]:hover {
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
-    filter: brightness(1.075);
-  }
-
-  input[type="submit"]:focus {
-    filter: brightness(0.95);
-  } */
-
-  input[type="submit"] {
-    background: none;
-    border: none;
-    border-radius: 100px;
-    color: rgba(0,0,0,0.65);
-    cursor: pointer;
-    font-weight: 700;
-    margin: 0;
-    padding: 3px 13px;
-    transition: 0.1s;
-    /*! margin-left: -7px; */
-    /*! margin-bottom: -3px; */
-  }
-
-  input[type="submit"]:hover {
-    background: #ededed;
-    color: #222;
-  }
-
-  input[type="submit"]:focus {
-    filter: brightness(0.8);
-  }
-
-  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type > tbody > tr:first-of-type > td:first-of-type b {
-    /*! background: red; */
-    /*! display: flex; */
-    /*! flex-wrap: wrap; */
-    /*! justify-content: start; */
-    /*! display: none; */
-  }
-
-  /* Dropdown menus */
-/*   select {
-    background-color: var(--white);
-    color: var(--grey-dark);
-    cursor: pointer;
-    border: 1px solid var(--grey-light);
-    border-radius: 4px;
-    padding: 7px 16px;
-    text-transform: uppercase;
-    -moz-appearance: none;
-  } */
-
-  select {
-    background: none;
-    border: none;
-    border-radius: 100px;
-    color: rgba(0,0,0,0.65);
-    cursor: pointer;
-    font-weight: 700;
-    margin: 0;
-    padding: 2px 0 2px 8px;
-    transition: 0.1s;
-    -moz-appearance: none;
-  }
-
-  select:hover {
-    background: #ededed;
-    color: #222;
-  }
-
-  /* Refresh button */
+  /* Mailbox refresh button */
   body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type a.searchPageLink {
     display: none;
-    /*! display: inline; */
   }
 
   body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td[align="right"] a.searchPageLink {
@@ -476,12 +553,10 @@
   }
 
   /* Page number */
-  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"],
-  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"] * {
+  body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"], body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"] b {
     color: var(--grey-dark) !important;
     font-size: 0.9em !important;
     font-weight: 400 !important;
-    /*! vertical-align: top; */
   }
 
   /* Main mailbox */
@@ -517,14 +592,10 @@
   }
 
   table.th tr td {
-/*! border: 1px solid var(--grey); */ /*
-    border-left: none;
-    border-right: none; */
     padding: 3px 10px;
   }
 
   table.th tr td * {
-    font-family: "Roboto", sans-serif !important;
     letter-spacing: .2px;
   }
 
@@ -539,7 +610,6 @@
     color: var(--grey-dark);
     content: 'No emails';
     display: inline-block;
-/*     font-family: "Roboto", sans-serif; */
     margin-left: -4px;
     padding: 25px 0;
     position: relative;
@@ -555,7 +625,6 @@
   tr:last-child:not([style])::after {
     border-bottom: none !important;
   }
-
 
   /* Unread emails */
   table.th tr[bgcolor="#ffffff"] {
@@ -577,53 +646,8 @@
     white-space: nowrap;
   }
 
-  /* Star icon */
-  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/star_on_2.gif"],
-  img[alt="Unstarred"],
-  img[alt="Remove star"],
-  img[alt="Add star"] {
-    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20px;
-    height: 0;
-    margin: 0 0 0 5px;
-    padding: 8px;
-    position: relative;
-    top: 0px;
-    width: 0;
-  }
-
-  img[alt="star"] {
-    display: none;
-  }
-
-  img[alt="Unstarred"],
-  img[alt="Remove star"],
-  img[alt="Add star"] {
-    cursor: pointer;
-    margin: 0;
-    top: 2px;
-  }
-
-  img[alt="Unstarred"],
-  img[alt="Add star"] {
-    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png');
-    opacity: 0.25;
-  }
-
-  img[alt="Unstarred"]:hover,
-  img[alt="Add star"]:hover {
-    opacity: 0.65;
-  }
-
-  img[alt="Remove star"]:hover {
-    filter: brightness(0.85);
-  }
-
   /* Email sender */
   table.th tr td:nth-child(2) {
-    font-family: "Roboto", sans-serif !important;;
     padding-left: 0;
     max-width: 20px;
     overflow: hidden;
@@ -634,14 +658,12 @@
 
   /* Email subject */
   table.th tr td:nth-child(3) {
-    /*! padding-left: 25px; */
     max-width: 200px;
   }
 
   span.ts {
     display: flex !important;
     white-space: nowrap;
-    /*! overflow: hidden; */
     text-overflow: ellipsis;
   }
 
@@ -650,14 +672,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  span.ts *:not([color="#7777CC"]) {
-/*! background: green !important; */ /*
-    color: red !important; */
-/*! flex-grow: 2; */
-/*! flex-shrink: 9999999; */
-/*! width: 100%; */
   }
 
   span.ts font[color="#7777CC"] {
@@ -685,26 +699,13 @@
     overflow: visible;
   }
 
-  /* Attachment paper clip icon */
-  img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/paperclip.gif"] {
-    background-image: url('https://www.gstatic.com/images/icons/material/system/1x/attachment_black_20dp.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20px;
-    height: 20px;
-    margin-left: 10px;
-    object-position: -20px;
-    opacity: 0.54;
-    width: 20px;
-  }
-
   /* Email date */
   table.th tr td:nth-child(4),
   table.th tr td:nth-child(4) b {
     font-size: 12px !important;
   }
 
-  /* Bottom of page information */
+  /* Bottom of page information; inbox storage used etc */
   table.ft {
     color: var(--grey-dark) !important;
     font-size: 0.9em;
@@ -758,7 +759,9 @@
     margin-top: 25px;
   }
 
-  /* Individual email pages */
+  /* ----------------- */
+  /* Individual emails */
+  /* ----------------- */
 
   /* Pad the main body */
   [bgcolor="#efefef"][cellpadding="1"] {
@@ -775,7 +778,7 @@
     padding-right: 12px;
   }
 
-  /* Heading/labels*/
+  /* Heading/labels */
   table[width="98%"] tr:nth-of-type(1) td:nth-of-type(1) h2 * {
     font-size: 20px !important;
   }
@@ -791,29 +794,6 @@
   table[width="98%"][cellpadding="0"] tr:nth-of-type(1) td:nth-of-type(1) a font {
     color: var(--grey-very-dark);
     font-size: 0.85em !important;
-  }
-
-  /* Back to inbox */
-  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink {
-    background: none;
-    border: none;
-    border-radius: 100px;
-    color: rgba(0,0,0,0.65) !important;
-    /*! display: inline !important; */
-    font-weight: 700;
-    margin: 0;
-    padding: 3px 13px;
-    text-decoration: none;
-    transition: 0.1s;
-  }
-
-  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:hover {
-    background: #ededed;
-    color: #222 !important;
-  }
-
-  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:focus {
-    filter: brightness(0.8);
   }
 
   /* Right hand buttons */
@@ -832,7 +812,6 @@
     bottom: -27px;
     color: var(--white);
     display: none;
-    font-family: "Roboto", sans-serif !important;
     font-size: 12px !important;
     text-decoration: none !important;
     padding: 2px 7px;
@@ -887,7 +866,7 @@
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:hover span {
     display: inline !important;
   }
-  https://mail.google.com/mail/u/0/h/zw95o2w3cy9j/?&th=166459642e204962&d=e&v=c
+
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:hover img {
     opacity: 0.85;
   }
@@ -900,7 +879,6 @@
   [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] {
     background: none;
     border-bottom: 1px solid var(--grey);
-    font-family: "Roboto", sans-serif !important;
     padding: 20px 0px;
   }
 
@@ -913,7 +891,6 @@
   [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] td,
   :not(div) [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] font *:not(a) {
     color: var(--black);
-    font-family: "Roboto", sans-serif !important;
     letter-spacing: 0.02em;
   }
 
@@ -926,7 +903,6 @@
   [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] tr td {
     color: var(--grey-dark);
     font-size: 12px !important;
-/*     background: magenta; */
   }
 
   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child {
@@ -937,10 +913,6 @@
     line-height: 0px;
     padding-bottom: 15px;
   }
-
-/*   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) td:first-child h3 {
-    margin-right: 5px;
-  } */
 
   h3 > a > font:nth-child(1) > b:nth-child(1),
   h3 > font:nth-child(1) > b:nth-child(1) {
@@ -961,37 +933,11 @@
   }
 
   td[colspan="2"] .r > font:nth-child(1) a {
-    background: none;
-    border: none;
-    border-radius: 100px;
-    color: rgba(0,0,0,0.65) !important;
-    cursor: pointer;
-    font-weight: 700;
     margin: 5px;
-    padding: 3px 13px;
-    text-decoration: none;
-    transition: 0.1s;
     white-space: nowrap;
   }
 
-  td[colspan="2"] .r > font:nth-child(1) a:hover {
-    background: #ededed;
-    color: #222;
-  }
-
-  td[colspan="2"] .r > font:nth-child(1) a:focus {
-    filter: brightness(0.8);
-  }
-
-  [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] td[colspan="2"] font[size="1"] {
-    background: red;
-  }
-
-  /* Email message */
-  body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(4) {
-/*     background: none; */
-  }
-
+  /* Email content */
   .msg {
     background: var(--white);
     border: 1px solid var(--white);
@@ -1004,13 +950,11 @@
 
   /* Quick reply */
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) {
-/*     background: red; */
     border: 1px solid var(--grey);
     border-radius: 8px;
     margin: 20px;
     padding: 30px;
   }
-
 
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1):hover,
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1):focus-within {
@@ -1052,36 +996,22 @@
   }
 
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(1) > textarea:nth-child(1) {
-    background: none;
     border: none;
-    color: var(--black);
     height: 150px !important;
     margin: 15px 0;
   }
 
-  input[name="nvp_bu_send"],
-  input[name="nvp_bu_sd"] {
-/*     background: red !important; */
+  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(1) > textarea:nth-child(1):hover,
+  .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(1) > textarea:nth-child(1):focus {
+    box-shadow: none;
   }
 
   input[name="nvp_bu_send"] {
-    background: var(--blue);
     border-radius: 5px;
-    color: white;
+    left: 0;
     padding: 8px 20px;
     margin-right: 10px;
     order: -99;
-  }
-
-  input[name="nvp_bu_send"]:hover {
-    background: var(--blue);
-    box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
-    color: white;
-    filter: brightness(1.07);
-  }
-
-  input[name="nvp_bu_send"]:focus {
-    filter: brightness(0.9);
   }
 
   .qr input[type="submit"] {
@@ -1101,7 +1031,9 @@
     color: var(--black);
   }
 
-  /* Compose page, individual email pages */
+  /* ------------------ */
+  /* Compose email page */
+  /* ------------------ */
 
   /* Reorder the input fields */
   .compose tbody {
@@ -1133,16 +1065,51 @@
     display: block;
   }
 
+  /* Hide first column to the compose table and add back in elements so we can use them as psuedo placeholder text later on */
+  .compose tr {
+    position: relative;
+  }
 
-  /* Style the text inputs */
+  .compose tr td:first-child {
+    display: none;
+  }
+
+  .compose tr:nth-child(1) td:last-child::before {
+    content: 'To';
+  }
+
+  .compose tr:nth-child(2) td:last-child::before {
+    content: 'Cc';
+  }
+
+  .compose tr:nth-child(3) td:last-child::before {
+    content: 'Bcc';
+  }
+
+  .compose tr:nth-child(4) td:last-child::before {
+    content: 'Subject';
+  }
+
+  .compose tr:nth-child(6) td:last-child::before {
+    content: 'Attachments';
+  }
+
+  /* Restrict the width of the input areas */
+  .compose .i,
+  .compose .mi {
+    width: 100%;
+  }
+
+  /* Text inputs */
   .compose textarea,
   .compose input[type="text"] {
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--grey);
-    color: var(--black);
     padding-bottom: 14px;
     padding-top: 2px;
+  }
+
+  .compose textarea {
+    border: none;
+    border-bottom: 1px solid var(--grey);
   }
 
   /* Pad the main body */
@@ -1183,50 +1150,6 @@
     vertical-align: top;
   }
 
-  /* Restrict the width of the input areas */
-  .compose .i,
-  .compose .mi {
-    width: 100%;
-  }
-
-  /* Hide first column to the compose table and add back in elements */
-  .compose tr {
-    position: relative;
-  }
-
-  .compose tr td:first-child {
-    display: none;
-  }
-
-  .compose tr:nth-child(1) td:last-child::before {
-    content: 'To';
-  }
-
-  .compose tr:nth-child(2) td:last-child::before {
-    content: 'Cc';
-  }
-
-  .compose tr:nth-child(3) td:last-child::before {
-    content: 'Bcc';
-  }
-
-  .compose tr:nth-child(4) td:last-child::before {
-    content: 'Subject';
-  }
-
-  .compose tr:nth-child(6) td:last-child::before {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20px;
-    content: 'Attachments';
-    display: block;
-    left: 7px;
-    margin: 34px 0 34px 0;
-    position: relative;
-    width: 100%;
-    /*! padding-bottom: 30px; */
-  }
-
   /* To, Cc, Bcc, Subject */
   .compose tr:nth-child(-n+4) td:last-child {
     padding-bottom: 24px;
@@ -1262,14 +1185,23 @@
   }
 
   /* Attachments */
+  .compose tr:nth-child(6) td:last-child::before {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    display: block;
+    left: 7px;
+    margin: 34px 0 34px 0;
+    position: relative;
+    width: 100%;
+  }
+
   .compose tr:nth-child(5) {
     display: none;
   }
 
   .compose tr:nth-child(6) {
     color: var(--grey-dark);
-    /*! padding-bottom: 30px; */
-    /*! padding-top: 15px; */
   }
 
   .compose tr:nth-child(6) * {
@@ -1285,13 +1217,11 @@
   .compose tr:nth-child(6) input[type="checkbox"]:last-of-type {
     margin-bottom: 30px;
   }
-  
+
   .compose input[aria-label="Attach File"] {
     left: 7px;
     position: relative;
     margin: 0 0 27px 0;
-    /*! display: inherit; */
-    /*! padding-top: 30px; */
   }
 
   .compose input[value="Attach More Files"] {
@@ -1299,260 +1229,207 @@
     left: -4px;
   }
 
-  .compose tr:nth-child(7) {
-     /*! padding: 0 0 25px 0; */
-  }
-
   /* Main email input */
-  .compose tr:nth-child(8) {
-    /*! padding-bottom: 5px; */
-  }
-
   .compose textarea[aria-label="Message Body"] {
     padding: 0 8px;
   }
-  
+
+  /* ----------------------- */
   /* Attach more files pages */
-  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) {
-    background: none;
-  }
-  
+  /* ----------------------- */
+
   /* Buttons at the top */
   td[bgcolor="#eoecff"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#c3d9ff"]:first-child {
     display: none;
   }
-  
+
   /* Heading */
   td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] {
     padding-bottom: 25px;
     padding-top: 25px;
   }
-  
+
   td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] td br {
     margin-bottom: 15px;
   }
-  
+
   td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] td font b {
     font-size: 1.25em !important;
   }
-  
+
   /* Main attach files table */
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:not(:last-child) td {
     padding: 6px 0;
   }
-  
+
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:not(:last-child) td:first-child {
     padding-left: 2px;
     padding-right: 15px;
     text-align: left;
     width: 0;
   }
-  
+
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:last-child td:first-child {
     display: none;
     width: 0;
   }
-  
+
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:last-child td:last-child {
     height: 53px;
     padding-top: 25px;
     position: relative;
   }
-  
+
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:last-child td:last-child input[type="submit"] {
     left: -11px;
     margin-top: 25px;
     position: absolute;
     top: 0;
   }
-  
+
   /* Buttons at the bottom */
   td[bgcolor="#eoecff"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#c3d9ff"]:last-child {
     margin-left: -14px;
     padding-top: 25px;
   }
 
-  /* Sent mail page */
-/*   form[action="?&s=s"] {
-    background: lime !important;
-  } */
-  
+  /* ------------- */
+  /* Sent mail box */
+  /* ------------- */
+
+  /* Hide heading */
   form[action="?&s=s"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"] td:first-child h2 {
     display: none;
   }
 
+  /* ----------- */
   /* Drafts page */
-/*   form[action="?&s=d"] {
-    background: red !important;
-  } */
-  
+  /* ----------- */
+
   form[action="?&s=d"] a[href="?&s=d"] {
     display: none;
   }
 
+  /* ------------- */
   /* Settings page */
-  td[bgcolor="#fff7d7"] {
-/*     background: yellow !important; */
-    background: none;
-  }
-  
+  /* ------------- */
+
   /* Heading and nav */
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-child td {
     padding: 15px 0;
   }
-  
+
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] h2 {
     font-size: 18px !important;
   }
-  
+
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) td {
     padding-bottom: 25px;
   }
-  
+
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li a {
     color: var(--grey-dark) !important;
     text-decoration: none;
     padding: 0 3px;
   }
-  
+
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li.on {
     background: none;
     border-bottom: 2px solid var(--blue);
     color: var(--blue);
     padding-bottom: 10px;
   }
-  
-  /* Main table */
-  .prf {
-/*     background: red; */
-  }
-  
+
+  /* Main body */
   .prf > table > tbody > tr:not(:last-child) > td {
     border: none;
     border-bottom: 1px solid var(--grey);
     padding-bottom: 25px;
     padding-top: 25px;
   }
-  
+
   .prf > table > tbody > tr:last-child > td {
     padding-top: 30px;
-    
+
   }
-  
+
   .prf input[type="submit"][value="Save Changes"] {
-    background: var(--blue);
-    color: white;
     margin-left: 15px;
   }
-  
-  .prf input[type="submit"][value="Save Changes"]:hover {
-    box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
-    filter: brightness(1.07);
-  }
-  
-  .prf input[type="submit"][value="Save Changes"]:focus {
-    filter: brightness(0.9);
-  }
-  
-  .prf tr td:nth-child(2) {
-    /*! padding-left: 30px; */
-  }
-  
+
   .prf span.s {
     color: var(--grey-dark) !important;;
     font-size: 12px !important;
   }
-  
+
   .prf select {
     display: block;
-    background: var(--grey);
-    position: relative;
-    left: -12px; 
-  }
-  
-  .prf input[type="radio"] {
-    margin-bottom: 10px;
-    margin-right: 5px;
-  }
-  
-  .prf input[type="text"] {
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--grey);
-    color: var(--black);
-    margin: 0 0 15px 0;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    position: relative;
-    top: -1px;
-  }
-  
-  .prf textarea {
-    background: none;
-    border: 1px solid var(--grey);
-    border-radius: 8px;
-    color: var(--black);
-    padding: 10px;
-    /*! margin: 0 10px; */
-  }
-  
-  .prf textarea:hover,
-  .prf textarea:focus {
-    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
   }
 
-  /* Individual label pages */
-/*   form[action*="?&s=l&l"] {
-    background: magenta !important;
-  } */
-  
-  /* Search options page */
-  td[bgcolor="#b5edbc"] {
-    background: none;
+  table[summary="general settings"] tr:nth-child(2) select {
+    margin-top: 10px;
   }
-  
+
+  table[summary="general settings"] .prv tr:first-child td {
+    padding-bottom: 10px;
+  }
+
+  table[summary="general settings"] .prv tr:nth-child(2) td:first-child {
+    padding-right: 5px;
+  }
+
+  table[summary="general settings"] .prv tr:nth-child(3) td {
+    padding-top: 5px;
+  }
+
+  table[summary="labels settings"] tr td:nth-child(2) {
+    font-size: 1em !important;
+  }
+
+  table[summary="labels settings"] tr:last-child td {
+    padding-top: 60px !important;
+  }
+
+  table[summary="labels settings"] tr:last-child td br {
+    display: none;
+  }
+
+  table[summary="labels settings"] tr:last-child td b:first-child {
+    margin-right: 15px;
+    position: relative;
+    top: 3px;
+  }
+
+  /* ------------------- */
+  /* Search options page */
+  /* ------------------- */
+
   td[bgcolor="#b5edbc"] table[bgcolor="#74d982"] {
     padding: 25px 0;
   }
-  
+
   td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) td {
     color: var(--grey-dark);
     padding: 10px 5px;
   }
-  
+
   td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) input[type="text"] {
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--grey);
-    color: var(--black);
-    padding-bottom: 5px;
-    padding-left: 5px;
     position: relative;
     top: 3px;
   }
-  
+
   td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) select {
     color: var(--black);
   }
-  
+
   td[bgcolor="#b5edbc"] form[name="asf"] table.h {
     padding-top: 15px;
   }
-  
+
   td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"] {
-    background: var(--blue);
     border-radius: 5px;
     color: white;
     margin-right: 15px;
     padding: 8px 20px;
-  }
-  
-  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:hover {
-    box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
-    filter: brightness(1.07);
-  }
-  
-  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:focus {
-    filter: brightness(0.9);
   }
 }
