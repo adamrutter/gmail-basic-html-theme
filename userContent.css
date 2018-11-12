@@ -137,6 +137,7 @@
   table[summary="accounts settings"] input[value="Save"],
   table[summary="labels settings"] tr:last-child input[type="submit"],
   table[summary="filters settings"] input[type="submit"][value="Create a new Filter"],
+  table[summary="filters settings"] input[type="submit"][value="Create Filter"],
   table[summary="forwarding and pop settings"] input[type="submit"][value="Save changes"] {
     background: var(--blue);
     color: white !important;
@@ -148,10 +149,11 @@
   table[summary="accounts settings"] input[value="Save"]:hover,
   table[summary="labels settings"] tr:last-child input[type="submit"]:hover,
   table[summary="filters settings"] input[type="submit"][value="Create a new Filter"]:hover,
+  table[summary="filters settings"] input[type="submit"][value="Create Filter"]:hover,
   table[summary="forwarding and pop settings"] input[type="submit"][value="Save changes"]:hover {
     background: var(--blue);
     box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
-    color: white;
+    color: white !important;
     filter: brightness(1.07);
   }
 
@@ -161,6 +163,7 @@
   table[summary="accounts settings"] input[value="Save"]:focus,
   table[summary="labels settings"] tr:last-child input[type="submit"]:focus,
   table[summary="filters settings"] input[type="submit"][value="Create a new Filter"]:focus,
+  table[summary="filters settings"] input[type="submit"][value="Create Filter"]:focus,
   table[summary="forwarding and pop settings"] input[type="submit"][value="Save changes"]:focus {
     filter: brightness(0.9);
   }
@@ -1183,7 +1186,7 @@
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type {
     border-top: 1px solid var(--grey);
     margin-top: 30px;
-    padding: 30px 9px 0 9px;
+    padding: 45px 9px 0 9px;
   }
 
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type td:first-of-type {
@@ -1222,6 +1225,8 @@
   }
 
   .compose tr:nth-child(-n+4) td:last-child textarea {
+    border-radius: 0;
+    box-shadow: none;
     height: 40px;
     padding-left: 32px;
     padding-right: 32px;
@@ -1286,6 +1291,7 @@
 
   /* Main email input */
   .compose textarea[aria-label="Message Body"] {
+    box-shadow: none;
     padding: 0 8px;
   }
 
@@ -1613,4 +1619,80 @@
     margin-right: 15px;
     padding: 8px 20px;
   }
-}
+  
+  /* -------------------- */
+  /* Create a filter page */
+  /* -------------------- */
+  
+  /* Heading */
+  td[width="3"][bgcolor="#fad163"] + td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-of-type td {
+    padding: 25px 76px 0 76px;
+  }
+  
+  td[width="3"][bgcolor="#fad163"] + td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-of-type td h2 {
+    font-size: 1.5em !important;
+  }
+  
+  td[width="3"][bgcolor="#fad163"] + td[bgcolor="#fff7d7"] table[bgcolor="#fad163"]:last-of-type {
+    display: none;
+  }
+  
+  /* Rearrange main table */
+  table[summary="filters settings"] form[action="./?v=prf"][name="f"][enctype="multipart/form-data"][method="POST"] > .middle-container-padded {
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded > b {
+    align-self: start;
+  }
+  
+  table[summary="filters settings"] form[action="./?v=prf"][name="f"][enctype="multipart/form-data"][method="POST"] > .middle-container-padded > br {
+    display: none;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded .begin-container-align-end {
+    margin-top: 30px;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded .begin-container-align-end br {
+    margin-bottom: 20px;
+  }
+
+  table[summary="filters settings"] .middle-container-padded .begin-container-align-end > br:nth-child(15) {
+    margin-bottom: 35px;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded .middle-container {
+    margin-top: 30px;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded .middle-container br {
+    display: none;
+  }
+  
+  /* Choose action */
+  table[summary="filters settings"] .middle-container-padded > .middle-container-padded {
+/*     background: red; */
+    margin: 45px 0 30px 0;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded > .middle-container-padded input[type="checkbox"] {
+    position: relative;
+    top: -3px;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded > .middle-container-padded select {
+    /*! margin-top: 8px; */
+    display: inline-block;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded > .middle-container-padded br {
+    margin-bottom: 15px;
+  }
+  
+  table[summary="filters settings"] .middle-container-padded > .middle-container-padded:nth-child(6) > br:nth-child(20) {
+    display: none;
+  }
