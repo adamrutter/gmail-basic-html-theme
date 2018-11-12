@@ -102,7 +102,7 @@
 
   /* Buttons */
   input[type="submit"],
-  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink,
+/*   [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink, */
   td[colspan="2"] .r > font:nth-child(1) a {
     background: none;
     border: none;
@@ -118,14 +118,14 @@
   }
 
   input[type="submit"]:hover,
-  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:hover,
+/*   [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:hover, */
   td[colspan="2"] .r > font:nth-child(1) a:hover {
     background: #ededed;
     color: #222 !important;
   }
 
   input[type="submit"]:focus,
-  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:focus,
+/*   [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:focus, */
   td[colspan="2"] .r > font:nth-child(1) a:focus {
     filter: brightness(0.8);
   }
@@ -167,7 +167,8 @@
 
   /* Delete button */
   table[summary="labels settings"] input[type="submit"][value="Remove"]:hover,
-  table[summary="filters settings"] input[type="submit"][value="Delete"]:hover {
+  table[summary="filters settings"] input[type="submit"][value="Delete"]:hover,
+  input[type="submit"][value="Discard Drafts"]:hover{
     background: var(--red);
     color: white !important;
   }
@@ -229,7 +230,26 @@
     width: 20px;
   }
   
+  /* Email labels */
+  table.th tr td:nth-child(3) font[color="#006633"]:not(:empty),
+  table[width="98%"][cellpadding="0"] tr:nth-of-type(1) td:nth-of-type(1) a {
+    background: var(--grey);
+    border-radius: 4px;
+    color: var(--grey-very-dark);
+    font-size: 0.8em !important;
+    padding: 0 4px;
+    position: relative;
+    text-decoration: none;
+    top: 2px;
+  }
+  
   /* Unstyle anchors */
+  body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a:not(:hover),
+  a[accesskey="c"],
+  [bgcolor="#C3D9FF"][cellpadding="2"] a.searchPageLink:not(:hover),
+  :not(div) [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] a:not(:hover),
+    body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"], body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"] a:not(:hover),
+  table.ft a:not(:hover),
   table[summary="labels settings"] a {
     text-decoration: none;
   }
@@ -572,7 +592,7 @@
     font-size: 12px !important;
   }
 
-  /* Page number */
+  /* Page number */ 
   body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"], body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)[align="right"] b {
     color: var(--grey-dark) !important;
     font-size: 0.9em !important;
@@ -693,6 +713,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  
+  /* Labels */
+  table.th tr td:nth-child(3) font[color="#006633"]:not(:empty) {
+    margin-right: 7px;
+  }
 
   span.ts font[color="#7777CC"] {
     color: var(--grey-dark);
@@ -701,18 +726,6 @@
     padding-left: 4px;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  /* Email labels */
-  table.th tr td:nth-child(3) font[color="#006633"]:not(:empty) {
-    background: var(--grey);
-    border-radius: 4px;
-    color: var(--grey-very-dark);
-    font-size: 0.8em !important;
-    margin-right: 7px;
-    padding: 0 4px;
-    position: relative;
-    top: 2px;
   }
 
   span.ts font[size="1"] {
@@ -804,9 +817,7 @@
   }
 
   table[width="98%"][cellpadding="0"] tr:nth-of-type(1) td:nth-of-type(1) a {
-    background: var(--grey);
-    border-radius: 4px;
-    padding: 0 6px;
+    font-size: 1em !important;
     position: relative;
     top: -2px;
   }
@@ -816,6 +827,14 @@
     font-size: 0.85em !important;
   }
 
+  /* Number of hidden emails dialog */
+  table[width="98%"][cellspacing="0"][cellpadding="1"][border="0"][bgcolor="#cccccc"][align="center"] table[bgcolor="#E2E2E2"] td[height="35"][align="center"] {
+    background: #e2e2e2;
+    box-shadow: 0 1px 0 0px var(--grey);
+    position: relative;
+    top: -1px;
+  }
+  
   /* Right hand buttons */
   [bgcolor="#E0ECFF"][cellpadding="2"] a.nu {
     border-radius: 100px;
@@ -907,6 +926,10 @@
     position: relative;
     top: -1px;
   }
+  
+  :not(div) [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] a font {
+    text-decoration-color: var(--black);
+  }
 
   [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] td,
   :not(div) [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] font *:not(a) {
@@ -967,6 +990,11 @@
     padding-left: 0;
     padding: 30px 0;
   }
+  
+  .msg a {
+    color: blue !important;
+    text-decoration: underline !important;
+  }
 
   /* Quick reply */
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) {
@@ -974,6 +1002,8 @@
     border-radius: 8px;
     margin: 20px;
     padding: 30px;
+    /*! max-width: 100%; */
+    /*! width: 100%; */
   }
 
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1):hover,
@@ -1019,11 +1049,16 @@
     border: none;
     height: 150px !important;
     margin: 15px 0;
+    /*! width: 100%; */
   }
 
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(1) > textarea:nth-child(1):hover,
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(1) > textarea:nth-child(1):focus {
     box-shadow: none;
+  }
+  
+  .qr textarea {
+    width: initial;
   }
 
   input[name="nvp_bu_send"] {
@@ -1573,7 +1608,7 @@
   }
 
   td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"] {
-    border-radius: 5px;
+    /*! border-radius: 5px; */
     color: white;
     margin-right: 15px;
     padding: 8px 20px;
