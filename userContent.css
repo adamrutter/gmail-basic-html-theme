@@ -19,8 +19,8 @@
 
   /* Fonts */
   * {
-    font-family: "Segoe UI", sans-serif;
-    font-size: 14px;
+    font-family: "Segoe UI", sans-serif !important;
+    font-size: 14px !important;
   }
 
   #sbq,
@@ -37,7 +37,7 @@
   /* Elements */
   a {
     color: var(--black) !important;
-    text-decoration: none;
+    /*! text-decoration: none; */
   }
 
   a:hover {
@@ -58,7 +58,7 @@
   }
 
   .prf input[type="radio"] {
-    margin: 10px 5px;
+/*     margin: 10px 5px; */
   }
 
   select {
@@ -134,7 +134,9 @@
   input[name="nvp_bu_send"],
   .prf input[type="submit"][value="Save Changes"],
   td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"],
-  table[summary="accounts settings"] input[value="Save"] {
+  table[summary="accounts settings"] input[value="Save"],
+  table[summary="labels settings"] tr:last-child input[type="submit"],
+  table[summary="filters settings"] input[type="submit"][value="Create a new Filter"] {
     background: var(--blue);
     color: white !important;
   }
@@ -142,7 +144,9 @@
   input[name="nvp_bu_send"]:hover,
   .prf input[type="submit"][value="Save Changes"]:hover,
   td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:hover,
-  table[summary="accounts settings"] input[value="Save"]:hover {
+  table[summary="accounts settings"] input[value="Save"]:hover,
+  table[summary="labels settings"] tr:last-child input[type="submit"]:hover,
+  table[summary="filters settings"] input[type="submit"][value="Create a new Filter"]:hover {
     background: var(--blue);
     box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
     color: white;
@@ -152,14 +156,17 @@
   input[name="nvp_bu_send"]:focus,
   .prf input[type="submit"][value="Save Changes"]:focus,
   td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:focus,
-  table[summary="accounts settings"] input[value="Save"]:focus {
+  table[summary="accounts settings"] input[value="Save"]:focus,
+  table[summary="labels settings"] tr:last-child input[type="submit"]:focus,
+  table[summary="filters settings"] input[type="submit"][value="Create a new Filter"]:focus {
     filter: brightness(0.9);
   }
 
   /* Delete button */
-  table[summary="labels settings"] input[type="submit"][value="Remove"]:hover {
+  table[summary="labels settings"] input[type="submit"][value="Remove"]:hover,
+  table[summary="filters settings"] input[type="submit"][value="Delete"]:hover {
     background: var(--red);
-    color: white;
+    color: white !important;
   }
 
   /* Star icon */
@@ -217,6 +224,11 @@
     object-position: -20px;
     opacity: 0.54;
     width: 20px;
+  }
+  
+  /* Unstyle anchors */
+  table[summary="labels settings"] a {
+    text-decoration: none;
   }
 
   /* Remove default backgrounds */
@@ -1318,6 +1330,12 @@
   /* ------------- */
   /* Settings page */
   /* ------------- */
+  
+  table[summary="general settings"] label + br,
+  table[summary="accounts settings"] label + br,
+  table[summary="labels settings"] label + br {
+    margin-bottom: 15px;
+  }
 
   /* Heading and nav */
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-child td {
@@ -1375,9 +1393,14 @@
   table[summary="general settings"] tr:nth-child(2) select {
     margin-top: 10px;
   }
-
+  
+  table[summary="general settings"] tr:nth-child(5) div {
+    margin-bottom: 10px;
+  }
+  
   table[summary="general settings"] .prv tr:first-child td {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    padding-top: 20px;
   }
 
   table[summary="general settings"] .prv tr:nth-child(2) td:first-child {
@@ -1387,16 +1410,12 @@
   table[summary="general settings"] .prv tr:nth-child(3) td {
     padding-top: 5px;
   }
-  
+
   /* Account settings */
   table[summary="accounts settings"] form b:first-of-type {
     display: inline-block;
     padding: 0 0 20px 0;  
   }
-  
-/*   table[summary="accounts settings"] form br {
-    display: block;
-  } */
   
   table[summary="accounts settings"] tr:nth-child(2) td:nth-child(2) br:nth-of-type(1),
   table[summary="accounts settings"] tr:nth-child(2) td:nth-child(2) br:nth-of-type(3),
@@ -1450,6 +1469,11 @@
     padding: 7px 18px;
   }
   
+  table[summary="accounts settings"] tr:nth-of-type(3) .begin-container input[type="radio"] {
+    margin-bottom: 0;
+    margin-top: 3px;
+  }
+  
 	/* Label settings */
   table[summary="labels settings"] tr td:nth-child(2) {
     font-size: 1em !important;
@@ -1467,6 +1491,36 @@
     margin-right: 15px;
     position: relative;
     top: 3px;
+  }
+  
+  table[summary="labels settings"] tr:last-child input[type="submit"] {
+    margin-left: 15px;
+  }
+  
+  /* Filter settings */
+  table[summary="filters settings"] tbody {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  table[summary="filters settings"] tbody td {
+/*     max-width: 700px; */
+    width: 100vw;
+  }
+  
+  table[summary="filters settings"] tr:last-of-type {
+    order: -99;
+    padding: 0 0 20px 0;
+  }
+  
+  table[summary="filters settings"] tr:nth-of-type(n+3):not(:last-of-type) form {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  table[summary="filters settings"] .end-container-align-begin {
+    white-space: nowrap;
   }
 
   /* ------------------- */
