@@ -129,17 +129,20 @@
   td[colspan="2"] .r > font:nth-child(1) a:focus {
     filter: brightness(0.8);
   }
+  
   /* Call to action button */
   input[name="nvp_bu_send"],
   .prf input[type="submit"][value="Save Changes"],
-  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"] {
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"],
+  table[summary="accounts settings"] input[value="Save"] {
     background: var(--blue);
-    color: white;
+    color: white !important;
   }
 
   input[name="nvp_bu_send"]:hover,
   .prf input[type="submit"][value="Save Changes"]:hover,
-  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:hover {
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:hover,
+  table[summary="accounts settings"] input[value="Save"]:hover {
     background: var(--blue);
     box-shadow: 0 1px 2px 0 rgba(26,115,232,0.451),0 1px 3px 1px rgba(26,115,232,0.302);
     color: white;
@@ -148,7 +151,8 @@
 
   input[name="nvp_bu_send"]:focus,
   .prf input[type="submit"][value="Save Changes"]:focus,
-  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:focus {
+  td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"]:focus,
+  table[summary="accounts settings"] input[value="Save"]:focus {
     filter: brightness(0.9);
   }
 
@@ -1367,6 +1371,7 @@
     display: block;
   }
 
+  /* General settings */
   table[summary="general settings"] tr:nth-child(2) select {
     margin-top: 10px;
   }
@@ -1382,7 +1387,70 @@
   table[summary="general settings"] .prv tr:nth-child(3) td {
     padding-top: 5px;
   }
-
+  
+  /* Account settings */
+  table[summary="accounts settings"] form b:first-of-type {
+    display: inline-block;
+    padding: 0 0 20px 0;  
+  }
+  
+/*   table[summary="accounts settings"] form br {
+    display: block;
+  } */
+  
+  table[summary="accounts settings"] tr:nth-child(2) td:nth-child(2) br:nth-of-type(1),
+  table[summary="accounts settings"] tr:nth-child(2) td:nth-child(2) br:nth-of-type(3),
+  table[summary="accounts settings"] tr:nth-child(2) td:nth-child(2) br:nth-of-type(4) {
+    display: none;
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width {
+    width: 100%;
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width * {
+    float: none;
+    text-align: left;
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width .begin-container:nth-child(-n+5) {
+    display: none;
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width .end-container:nth-child(-n+6) {
+    display: flex;
+    padding-bottom: 15px;
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width .end-container:nth-child(-n+6)::before {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width .end-container:nth-child(2)::before {
+    content: 'Update Name:';
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width .end-container:nth-child(6)::before {
+    content: 'Reply-to Address:';
+  }
+  
+  table[summary="accounts settings"] .begin-container-fixed-width .end-container:nth-child(-n+6) input {
+    flex-grow: 2;
+  }
+  
+  table[summary="accounts settings"] form .begin-container:last-of-type {
+    display: flex;
+    justify-content: center;
+    padding: 18px 0 10px 0;
+    width: 100%;
+  }
+  
+  table[summary="accounts settings"] form .begin-container:last-of-type input {
+    padding: 7px 18px;
+  }
+  
+	/* Label settings */
   table[summary="labels settings"] tr td:nth-child(2) {
     font-size: 1em !important;
   }
