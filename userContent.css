@@ -19,8 +19,8 @@
 
   /* Fonts */
   * {
-    font-family: "Segoe UI", sans-serif !important;
-    font-size: 14px !important;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
   }
 
   #sbq,
@@ -698,7 +698,7 @@
 
   /* Email sender */
   table.th tr td:nth-child(2) {
-    padding-left: 0;
+    padding-left: 0 !important;
     max-width: 20px;
     overflow: hidden;
     overflow-wrap: break-word;
@@ -1460,7 +1460,7 @@
   }
 
   table[summary="general settings"] .prv tr:nth-child(2) td:first-child {
-    padding-right: 5px;
+    padding-right: 5px !important;
   }
 
   table[summary="general settings"] .prv tr:nth-child(3) td {
