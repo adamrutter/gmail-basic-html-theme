@@ -45,7 +45,7 @@
   }
 
   body {
-    background: var(--white);
+    background: var(--white) !important;
     color: var(--black);
   }
 
@@ -55,6 +55,7 @@
     border-bottom: 1px solid var(--grey);
     color: var(--black);
     padding: 0 5px 4px 5px;
+    -moz-appearance: none;
   }
 
   .prf input[type="radio"] {
@@ -62,6 +63,7 @@
   }
 
   select {
+    -moz-appearance: none;
     background: none;
     background: var(--grey);
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/expand_more_black_20dp.png');
@@ -76,7 +78,6 @@
     padding: 2px 20px 2px 8px;
     position: relative;
     transition: 0.1s;
-    -moz-appearance: none;
   }
 
   select:hover {
@@ -84,6 +85,7 @@
   }
 
   textarea {
+    -moz-appearance: none;
     background: none;
     border: 1px solid var(--grey);
     border-radius: 8px;
@@ -115,6 +117,7 @@
     /* position: relative; */
     text-decoration: none;
     transition: 0.1s;
+    -moz-appearance: none;
   }
 
   input[type="submit"]:hover,
@@ -169,10 +172,11 @@
   }
 
   /* Delete button */
-  table[summary="labels settings"] input[type="submit"][value="Remove"]:hover,
-  table[summary="filters settings"] input[type="submit"][value="Delete"]:hover,
-  input[type="submit"][value="Discard Drafts"]:hover{
-    background: var(--red);
+  input[type="submit"][value="Remove"]:hover,
+  input[type="submit"][value="Delete"]:hover,
+  input[type="submit"][value="Discard Drafts"]:hover,
+  input[type="submit"][value="Delete Forever"]:hover {
+    background: var(--red) !important;
     color: white !important;
   }
 
@@ -189,12 +193,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
-    height: 0;
-    margin: 0 0 0 5px;
+    height: 0 !important;
+    margin: 0 0 0 4px;
     padding: 8px;
     position: relative;
     top: 0px;
-    width: 0;
+    width: 0 !important;
   }
 
   img[alt="Unstarred"],
@@ -226,11 +230,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
-    height: 20px;
+    height: 20px !important;
     margin: 0 10px;
     object-position: -20px;
     opacity: 0.54;
-    width: 20px;
+    width: 20px !important;
   }
   
   /* Email labels */
@@ -238,7 +242,7 @@
   table[width="98%"][cellpadding="0"] tr:nth-of-type(1) td:nth-of-type(1) a {
     background: var(--grey);
     border-radius: 4px;
-    color: var(--grey-very-dark);
+    color: var(--grey-very-dark) !important;
     font-size: 0.8em !important;
     padding: 0 4px;
     position: relative;
@@ -265,8 +269,10 @@
   [bgcolor="#e0ecff"],
   td[bgcolor="#fff7d7"],
   td[bgcolor="#b5edbc"],
+  table[bgcolor="#efefef"],
+  table[bgcolor="#B5EDBC"],
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) {
-    background: none;
+    background: none !important;
   }
 
   /* ------ */
@@ -318,19 +324,20 @@
 
   /* Search bar */
   #sbq {
-    background: var(--grey-very-light);
-    border: 1px solid var(--grey-very-light);
-    border-radius: 4px;
+    background: var(--grey-very-light) !important;
+    border: 1px solid var(--grey-very-light) !important;
+    border-radius: 4px !important;
     color: var(--black);
     padding: 10px;
     padding-left: 40px;
     transition: 0.1s;
     width: 100%;
+    -moz-appearance: none;
   }
 
   #sbq:focus {
-    background: var(--white);
-    border: 1px solid var(--grey-light);
+    background: var(--white) !important;
+    border: 1px solid var(--grey-light) !important;
     box-shadow: 0 1px 1px grey;
   }
 
@@ -374,11 +381,11 @@
   }
 
   body > table:first-of-type tbody:first-of-type tr:nth-of-type(2) tr:first-of-type td:first-of-type {
-    width: 100%;
+    width: 100% !important;
   }
 
   body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) {
-    padding: 0 10px;
+    padding: 0 10px !important;
   }
 
   body > table:first-of-type tr:nth-of-type(2) td:nth-of-type(2) a {
@@ -433,7 +440,7 @@
 
   /* Mailbox navigation menu */
   body > table:nth-of-type(2) td[width="120"] {
-    width: 250px;
+    width: 250px !important;
   }
 
   table.m {
@@ -441,14 +448,14 @@
   }
 
   table.m td {
-    padding: 0;
+    padding: 0 !important;
   }
 
   table.m tr:nth-of-type(n+3) a {
     border-radius: 20px !important;
     display: block;
-    padding: 2px 15px;
-    padding-left: 28px;
+    padding: 2px 15px !important;
+    padding-left: 28px !important;
     text-decoration: none;
     transform: translateX(-14px);
   }
@@ -535,16 +542,16 @@
 
   table.l h2,
   table.l br {
-    display: none;
+    display: none !important;
   }
 
   table.l a {
     border-radius: 30px;
     display: block;
-    margin: 0;
-    margin-left: -4px;
-    padding: 2px 15px;
-    padding-left: 24px;
+    margin: 0 !important;
+    margin-left: -4px !important;
+    padding: 2px 15px !important;
+    padding-left: 24px !important;
     text-decoration: none;
     transform: translateX(-12px);
     white-space: nowrap;
@@ -555,7 +562,7 @@
   }
 
   table.l a font {
-    color: var(--black);
+    color: var(--black) !important;
   }
 
   table.l a::before {
@@ -582,7 +589,7 @@
 
   /* Give a margin to main body */
   body > table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
-    padding-right: 20px;
+    padding-right: 20px !important;
   }
 
   /* Mailbox refresh button */
@@ -635,7 +642,7 @@
   }
 
   table.th tr td {
-    padding: 3px 10px;
+    padding: 3px 10px !important;
   }
 
   table.th tr td * {
@@ -671,12 +678,12 @@
 
   /* Unread emails */
   table.th tr[bgcolor="#ffffff"] {
-    background: var(--white);
+    background: var(--white) !important;
   }
 
   /* Read emails */
   table.th tr[bgcolor="#e8eef7"] {
-    background: var(--grey-very-light);
+    background: var(--grey-very-light) !important;
   }
 
   /* Checkbox */
@@ -723,7 +730,7 @@
   }
 
   span.ts font[color="#7777CC"] {
-    color: var(--grey-dark);
+    color: var(--grey-dark) !important;
     flex-shrink: 999999999;
     overflow: hidden;
     padding-left: 4px;
@@ -745,7 +752,7 @@
   table.ft {
     color: var(--grey-dark) !important;
     font-size: 0.9em;
-    margin-top: 50px;
+    margin-top: 50px !important;
     width: 100%
   }
 
@@ -807,7 +814,7 @@
 
   body > table:nth-of-type(2) td:nth-of-type(2) table[align="center"][border="0"][cellpadding="0"][cellspacing="0"][width="98%"] {
     margin-bottom: 10px;
-    padding: 0 17px;
+    padding: 0 17px !important;
   }
 
   td[align="right"] > table.ac {
@@ -826,8 +833,10 @@
   }
 
   table[width="98%"][cellpadding="0"] tr:nth-of-type(1) td:nth-of-type(1) a font {
-    color: var(--grey-very-dark);
+    color: var(--grey-very-dark) !important;
     font-size: 0.85em !important;
+/*     top: -1px; */
+/*     position: relative; */
   }
 
   /* Number of hidden emails dialog */
@@ -838,17 +847,17 @@
     top: -1px;
   }
   
-  /* Right hand buttons */
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu {
+  /* Right hand buttons; expand, print, new window */
+  table.ac a.nu {
     border-radius: 100px;
-    margin: 0;
-    padding: 8px 5px;
+    margin: 0 !important;
+    padding: 8px 5px !important;
     position: relative;
     text-decoration: none;
     transition: 0.1s;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu span {
+  table.ac a.nu span {
     background: rgba(0, 0, 0, 0.65);
     border-radius: 4px;
     bottom: -27px;
@@ -863,69 +872,69 @@
     z-index: 99;
    }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] table.ac td:nth-child(1) span.u {
+  table.ac table.ac td:nth-child(1) span.u {
     left: -17px;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] table.ac td:nth-child(2) span.u {
+  table.ac table.ac td:nth-child(2) span.u {
     left: -1px;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] table.ac td:nth-child(3) span.u {
+  table.ac table.ac td:nth-child(3) span.u {
     left: -23px;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu img {
+  table.ac a.nu img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
-    height: 0;
+    height: 0 !important;
     left: 2px;
     margin: 0;
     opacity: 0.65;
     padding: 12px;
     position: relative;
     top: -2px;
-    width: 0;
+    width: 0 !important;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/expand_icon.gif"] {
+  table.ac a.nu img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/expand_icon.gif"] {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/expand_all_black_20dp.png');
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/print_icon.gif"] {
+  table.ac a.nu img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/print_icon.gif"] {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/print_black_20dp.png');
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/tearoff_icon.gif"] {
+  table.ac a.nu img[src="https://ssl.gstatic.com/ui/v1/icons/mail/images/tearoff_icon.gif"] {
     background-image: url('https://www.gstatic.com/images/icons/material/system/1x/open_in_new_black_20dp.png');
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:hover {
+  table.ac a.nu:hover {
     background: #ededed;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:hover span {
+  table.ac a.nu:hover span {
     display: inline !important;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:hover img {
+  table.ac a.nu:hover img {
     opacity: 0.85;
   }
 
-  [bgcolor="#E0ECFF"][cellpadding="2"] a.nu:active {
+  table.ac a.nu:active {
     background: rgba(0, 0, 0, 0.35);
   }
 
   /* Email details */
   [bgcolor="#efefef"][cellpadding="1"][border="0"][width="100%"] {
     background: none;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey) !important;
     padding: 20px 0px;
   }
 
   .qr {
-    border-top: 1px solid var(--white);
+    border-top: 1px solid var(--white) !important;
     position: relative;
     top: -1px;
   }
@@ -970,7 +979,7 @@
     margin: 0 -18px 5px -18px;
     border-bottom: 1px solid var(--grey);
     padding-bottom: 15px;
-    padding: 25px 0;
+    padding: 25px 0 !important;
   }
 
   td[colspan="2"] .r > font:nth-child(1) {
@@ -991,7 +1000,7 @@
     margin: -1px;
     padding-bottom: 20px;
     padding-left: 0;
-    padding: 30px 0;
+    padding: 30px 0 !important;
   }
   
   .msg a {
@@ -1001,7 +1010,7 @@
 
   /* Quick reply */
   .qr > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) {
-    border: 1px solid var(--grey);
+    border: 1px solid var(--grey) !important;
     border-radius: 8px;
     margin: 20px;
     padding: 30px;
@@ -1061,7 +1070,7 @@
   }
   
   .qr textarea {
-    width: initial;
+    width: initial !important;
   }
 
   input[name="nvp_bu_send"] {
@@ -1155,7 +1164,7 @@
   /* Restrict the width of the input areas */
   .compose .i,
   .compose .mi {
-    width: 100%;
+    width: 100% !important;
   }
 
   /* Text inputs */
@@ -1184,7 +1193,7 @@
 
   /* Buttons at the bottom */
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type {
-    border-top: 1px solid var(--grey);
+    border-top: 1px solid var(--grey) !important;
     margin-top: 30px;
     padding: 45px 9px 0 9px;
   }
@@ -1210,7 +1219,7 @@
 
   /* To, Cc, Bcc, Subject */
   .compose tr:nth-child(-n+4) td:last-child {
-    padding-bottom: 24px;
+    padding-bottom: 15px !important;
   }
 
   .compose tr:nth-child(-n+4) td:last-child::before {
@@ -1306,8 +1315,8 @@
 
   /* Heading */
   td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] {
-    padding-bottom: 25px;
-    padding-top: 25px;
+    padding-bottom: 25px !important;
+    padding-top: 25px !important;
   }
 
   td[bgcolor="#eoecff"] table.h[width="100%"][cellspacing="0"][cellpadding="2"][border="0"] td br {
@@ -1320,13 +1329,13 @@
 
   /* Main attach files table */
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:not(:last-child) td {
-    padding: 6px 0;
+    padding: 6px 0 !important;
   }
 
   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#eoecff"]:nth-of-type(2) table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"]:nth-child(3) tr:not(:last-child) td:first-child {
-    padding-left: 2px;
-    padding-right: 15px;
-    text-align: left;
+    padding-left: 2px !important;
+    padding-right: 15px !important;
+    text-align: left !important;
     width: 0;
   }
 
@@ -1360,7 +1369,7 @@
 
   /* Hide heading */
   form[action="?&s=s"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"] td:first-child h2 {
-    display: none;
+    display: none !important;
   }
 
   /* ----------- */
@@ -1386,7 +1395,7 @@
 
   /* Heading and nav */
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-child td {
-    padding: 15px 0;
+    padding: 15px 0 !important;
   }
 
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] h2 {
@@ -1394,7 +1403,7 @@
   }
 
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) td {
-    padding-bottom: 25px;
+    padding-bottom: 25px !important;
   }
 
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li a {
@@ -1404,22 +1413,22 @@
   }
 
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) .nav li.on {
-    background: none;
+    background: none !important;
     border-bottom: 2px solid var(--blue);
     color: var(--blue);
-    padding-bottom: 10px;
+    padding-bottom: 10px !important;
   }
 
   /* Main body */
   .prf > table > tbody > tr:not(:last-child) > td {
     border: none;
-    border-bottom: 1px solid var(--grey);
-    padding-bottom: 25px;
-    padding-top: 25px;
+    border-bottom: 1px solid var(--grey) !important;
+    padding-bottom: 25px !important;
+    padding-top: 25px !important;
   }
 
   .prf > table > tbody > tr:last-child > td {
-    padding-top: 30px;
+    padding-top: 30px !important;
 
   }
 
@@ -1446,8 +1455,8 @@
   }
   
   table[summary="general settings"] .prv tr:first-child td {
-    padding-bottom: 15px;
-    padding-top: 20px;
+    padding-bottom: 15px !important;
+    padding-top: 20px !important;
   }
 
   table[summary="general settings"] .prv tr:nth-child(2) td:first-child {
@@ -1471,12 +1480,12 @@
   }
   
   table[summary="accounts settings"] .begin-container-fixed-width {
-    width: 100%;
+    width: 100% !important;
   }
   
   table[summary="accounts settings"] .begin-container-fixed-width * {
-    float: none;
-    text-align: left;
+    float: none !important;
+    text-align: left !important;
   }
   
   table[summary="accounts settings"] .begin-container-fixed-width .begin-container:nth-child(-n+5) {
@@ -1485,7 +1494,7 @@
   
   table[summary="accounts settings"] .begin-container-fixed-width .end-container:nth-child(-n+6) {
     display: flex;
-    padding-bottom: 15px;
+    padding-bottom: 15px !important;
   }
   
   table[summary="accounts settings"] .begin-container-fixed-width .end-container:nth-child(-n+6)::before {
@@ -1508,7 +1517,7 @@
   table[summary="accounts settings"] form .begin-container:last-of-type {
     display: flex;
     justify-content: center;
-    padding: 18px 0 10px 0;
+    padding: 18px 0 10px 0 !important;
     width: 100%;
   }
   
@@ -1557,7 +1566,7 @@
   
   table[summary="filters settings"] tr:last-of-type {
     order: -99;
-    padding: 0 0 20px 0;
+    padding: 0 0 20px 0 !important;
   }
   
   table[summary="filters settings"] tr:last-of-type input[type="submit"] {
@@ -1576,7 +1585,7 @@
   
   /* Forwarding and POP/IMAP */
   table[summary="forwarding and pop settings"] .spacer-line {
-    border: none;
+    border: none !important;
   }
   
   table[summary="forwarding and pop settings"] select {
@@ -1597,7 +1606,7 @@
 
   td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) td {
     color: var(--grey-dark);
-    padding: 10px 5px;
+    padding: 10px 5px !important;
   }
 
   td[bgcolor="#b5edbc"] form[name="asf"] table:not(.h) input[type="text"] {
@@ -1610,7 +1619,7 @@
   }
 
   td[bgcolor="#b5edbc"] form[name="asf"] table.h {
-    padding-top: 15px;
+    padding-top: 15px !important;
   }
 
   td[bgcolor="#b5edbc"] form[name="asf"] table.h input[type="submit"][value="Search Mail"] {
@@ -1626,7 +1635,7 @@
   
   /* Heading */
   td[width="3"][bgcolor="#fad163"] + td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-of-type td {
-    padding: 25px 76px 0 76px;
+    padding: 25px 76px 0 76px !important;
   }
   
   td[width="3"][bgcolor="#fad163"] + td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-of-type td h2 {
@@ -1639,7 +1648,7 @@
   
   /* Rearrange main table */
   table[summary="filters settings"] form[action="./?v=prf"][name="f"][enctype="multipart/form-data"][method="POST"] > .middle-container-padded {
-    padding: 0 60px;
+    padding: 0 60px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1654,7 +1663,7 @@
   }
   
   table[summary="filters settings"] .middle-container-padded .begin-container-align-end {
-    margin-top: 30px;
+    margin-top: 30px !important;
   }
   
   table[summary="filters settings"] .middle-container-padded .begin-container-align-end br {
@@ -1666,7 +1675,7 @@
   }
   
   table[summary="filters settings"] .middle-container-padded .middle-container {
-    margin-top: 30px;
+    margin-top: 30px !important;
   }
   
   table[summary="filters settings"] .middle-container-padded .middle-container br {
@@ -1676,7 +1685,7 @@
   /* Choose action */
   table[summary="filters settings"] .middle-container-padded > .middle-container-padded {
 /*     background: red; */
-    margin: 45px 0 30px 0;
+    margin: 45px 0 30px 0 !important;
   }
   
   table[summary="filters settings"] .middle-container-padded > .middle-container-padded input[type="checkbox"] {
@@ -1690,7 +1699,7 @@
   }
   
   table[summary="filters settings"] .middle-container-padded > .middle-container-padded br {
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
   }
   
   table[summary="filters settings"] .middle-container-padded > .middle-container-padded:nth-child(6) > br:nth-child(20) {
