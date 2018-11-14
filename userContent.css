@@ -27,8 +27,9 @@
   span[style="background: #ffff88; font-weight: bold;"],
   table.ft tr:nth-of-type(3) td *,
   a.ml,
-  input {
-    color: red !important;
+  input,
+  textarea {
+/*     color: red !important; */
     font-family: "Segoe UI", sans-serif !important;
     font-size: 14px !important;
   }
@@ -1252,6 +1253,7 @@
     height: 40px;
     padding-left: 32px;
     padding-right: 32px;
+    /*! padding-top: 5px; */
   }
 
   .compose tr:nth-child(-n+4) td:last-child input {
@@ -1412,7 +1414,8 @@
   }
 
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] h2 {
-    font-size: 18px !important;
+    font-size: 1.5em !important;
+    padding: 0 8px !important;
   }
 
   td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:nth-child(2) td {
