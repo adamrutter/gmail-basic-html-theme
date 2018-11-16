@@ -14,7 +14,8 @@
     --grey: #d6d6d6;
     --grey-light: #eeeeee;
     --grey-very-light: #efefef;
-    --white: #fafafa;
+/*     --white: #fafafa; */
+    --white: #ffffff;
   }
 
   /* Fonts */
@@ -155,6 +156,7 @@
   table[summary="forwarding and pop settings"] input[type="submit"][value="Save changes"] {
     background: var(--blue);
     color: white !important;
+    padding: 10px 20px;
   }
 
   input[name="nvp_bu_send"]:hover,
@@ -185,9 +187,18 @@
   /* Delete button */
   input[type="submit"][value="Remove"]:hover,
   input[type="submit"][value="Delete"]:hover,
+  input[type="submit"][value="Discard Draft"]:hover,
   input[type="submit"][value="Discard Drafts"]:hover,
-  input[type="submit"][value="Delete Forever"]:hover {
+  input[type="submit"][value="Delete Forever"]:hover,
+  td[colspan="2"] .r > font:nth-child(1) a[href*="&a=dm"]:hover,
+  input[type="submit"][value="Discard"]:hover {
     background: var(--red) !important;
+    color: white !important;
+  }
+  
+  /* Blue button on hover */
+  input[type="submit"][value="Go"]:hover {
+    background: var(--blue) !important;
     color: white !important;
   }
 
@@ -406,17 +417,11 @@
   /* Alert dialog */
   [role="alert"] {
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0px 2px 4px rgba(0,0,0,0.2);
-    /* background: #fad163 !important;
-    display: block;
-    margin: 5px 0;
-    padding: 3px;
+    left: 50%;
+    padding: 2px 0;
     position: absolute;
-    left: 0;
+    transform: translate(-50%, 0);
     z-index: 99;
-    right: 0;
-    margin: auto;
-    float: left;
-    top: 0; */
   }
 
   /* ------- */
@@ -644,7 +649,7 @@
   }
 
   table.th tr:last-child::after {
-    border-bottom: 1px solid var(--grey);
+    /*! border-bottom: 1px solid var(--grey) !important; */
   }
 
   table.th tr:hover::after {
@@ -663,8 +668,9 @@
   /* Empty email row */
   table.th tr td[bgcolor="#ffffff"] {
     background: var(--grey-light);
+    border-bottom: 1px solid var(--grey) !important;
     display: flex;
-    height: 100%;
+    height: 100% !important;
   }
 
   table.th tr td[bgcolor="#ffffff"]::after {
@@ -1115,6 +1121,25 @@
   /* ------------------ */
   /* Compose email page */
   /* ------------------ */
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#e0ecff"] form[name="f"][enctype="multipart/form-data"][method="POST"] {
+    border-radius: 8px;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    max-width: 650px
+  }
+  
+  /* Heading */
+  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#e0ecff"] form[name="f"][enctype="multipart/form-data"][method="POST"]::before {
+    background: var(--grey-very-dark);
+    border-radius: 7px 7px 0 0;
+    color: white;
+    content: 'New Message';
+    display: block;
+    font-weight: bold;
+/*     order: -99; */
+    padding: 10px 12px;
+/*     width: 100%; */
+  }
 
   /* Reorder the input fields */
   .compose tbody {
@@ -1123,23 +1148,23 @@
   }
 
   .compose tr:nth-child(1) {
-    order: -99;
-  }
-
-  .compose tr:nth-child(2) {
     order: -98;
   }
 
-  .compose tr:nth-child(3) {
+  .compose tr:nth-child(2) {
     order: -97;
   }
 
-  .compose tr:nth-child(4) {
+  .compose tr:nth-child(3) {
     order: -96;
   }
 
-  .compose tr:last-child {
+  .compose tr:nth-child(4) {
     order: -95;
+  }
+
+  .compose tr:last-child {
+    order: -94;
   }
 
   .compose tr td:last-child {
@@ -1184,8 +1209,8 @@
   /* Text inputs */
   .compose textarea,
   .compose input[type="text"] {
-    padding-bottom: 14px;
-    padding-top: 2px;
+    padding-bottom: 7px;
+    padding-top: 7px;
   }
 
   .compose textarea {
@@ -1194,10 +1219,23 @@
   }
 
   /* Pad the main body */
-  table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#e0ecff"] form[name="f"][enctype="multipart/form-data"][method="POST"] {
+/*   table[width="100%"][cellspacing="0"][cellpadding="0"][border="0"] td[bgcolor="#e0ecff"] form[name="f"][enctype="multipart/form-data"][method="POST"] {
     margin: 0 auto;
     max-width: 650px;
-    padding: 30px 10px;
+    padding: 0 10px 30px 10px;
+  } */
+   
+  .compose tbody {
+    padding: 5px 0 20px 0;
+  }
+  
+  .compose tr td:last-child {
+    padding: 0 20px !important;
+  }
+  
+  .compose tr:nth-child(6),
+  .compose tr:nth-child(7) {
+    margin: 0 -8px
   }
 
   /* Buttons at the top */
@@ -1207,9 +1245,9 @@
 
   /* Buttons at the bottom */
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type {
-    border-top: 1px solid var(--grey) !important;
-    margin-top: 30px;
-    padding: 45px 9px 0 9px;
+    /*! border-top: 1px solid var(--grey) !important; */
+    /*! margin-top: 20px; */
+    padding: 0 20px;
   }
 
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type td:first-of-type {
@@ -1228,44 +1266,47 @@
   }
 
   form[name="f"][enctype="multipart/form-data"][method="POST"] table[width="100%"][cellspacing="0"][cellpadding="2"][border="0"][bgcolor="#C3D9FF"]:last-of-type td:last-of-type {
+    border-top: 1px solid var(--grey);
+    padding-top: 30px !important;
     vertical-align: top;
   }
 
   /* To, Cc, Bcc, Subject */
   .compose tr:nth-child(-n+4) td:last-child {
-    padding-bottom: 15px !important;
+/*     padding-bottom: 15px !important; */
+    padding: 0 20px !important;
   }
 
   .compose tr:nth-child(-n+4) td:last-child::before {
     color: var(--grey-dark);
     position: absolute;
-    left: 10px;
-    top: 4px;
+    /*! left: 10px; */
+    top: 7px;
   }
 
   .compose tr:nth-child(1) td:last-child::before {
-    top: 5px;
+    top: 8px;
   }
 
   .compose tr:nth-child(-n+4) td:last-child textarea {
     border-radius: 0;
     box-shadow: none;
-    height: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
+    height: 36px;
+    padding-left: 22px;
+    padding-right: 22px;
     /*! padding-top: 5px; */
   }
 
   .compose tr:nth-child(-n+4) td:last-child input {
-    padding-left: 32px;
+    padding-left: 22px;
   }
 
   .compose tr:nth-child(3) td:last-child input {
-    padding-left: calc(32px + 5px);
+    padding-left: calc(22px + 5px);
   }
 
   .compose tr:nth-child(4) td:last-child input {
-    padding-left: calc(32px + 28px);
+    padding-left: calc(22px + 28px);
   }
 
   /* Attachments */
@@ -1275,7 +1316,7 @@
     background-size: 20px;
     display: block;
     left: 7px;
-    margin: 34px 0 34px 0;
+    margin: 20px 0;
     position: relative;
     width: 100%;
   }
@@ -1305,7 +1346,7 @@
   .compose input[aria-label="Attach File"] {
     left: 7px;
     position: relative;
-    margin: 0 0 27px 0;
+    margin: 0 0 20px 0;
   }
 
   .compose input[value="Attach More Files"] {
@@ -1314,9 +1355,14 @@
   }
 
   /* Main email input */
+  .compose tr:last-child td:last-child {
+    padding: 0 20px !important;
+  }
+  
   .compose textarea[aria-label="Message Body"] {
+    border-radius: 0;
     box-shadow: none;
-    padding: 0 8px;
+    padding: 7px 0;
   }
 
   /* ----------------------- */
@@ -1586,7 +1632,7 @@
   }
   
   table[summary="filters settings"] tr:last-of-type input[type="submit"] {
-    padding: 10px 20px;
+/*     padding: 10px 20px; */
   }
   
   table[summary="filters settings"] tr:nth-of-type(n+3):not(:last-of-type) form {
@@ -1642,7 +1688,7 @@
     /*! border-radius: 5px; */
     color: white;
     margin-right: 15px;
-    padding: 8px 20px;
+/*     padding: 8px 20px; */
   }
   
   /* -------------------- */
@@ -1656,6 +1702,7 @@
   
   td[width="3"][bgcolor="#fad163"] + td[bgcolor="#fff7d7"] table[bgcolor="#fad163"] tr:first-of-type td h2 {
     font-size: 1.5em !important;
+    padding: 0 !important;
   }
   
   td[width="3"][bgcolor="#fad163"] + td[bgcolor="#fff7d7"] table[bgcolor="#fad163"]:last-of-type {
