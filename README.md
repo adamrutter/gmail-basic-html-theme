@@ -35,10 +35,21 @@ __If you already have a `userContent.css` in this directory__, the content of th
 __If you do not already have a `userContent.css`__, you just need to move the downloaded `userContent.css` to the correct directory.
 
 * Move or copy/paste the downloaded `userContent.css` to your `chrome` directory.
-* 
 
 ## Constraints
 
-There are some constraints with bringing the theme up to date with modern Gmail, mainly arising from the inability to modify any `html` code.
+There are some constraints with bringing the basic HTML Gmail up to date with the modern styling, mainly arising from the inability to modify any HTML code.
 
-One obvious one is using text instead of icons for the mailbox controls. Whilst it would be possible to use icons, it is not possible to use tooltips to indicate what the buttons do. Without being able to add any `html` for tooltips, or add pseduo elements to an `input` (the buttons are actually an `<input type="submit">`), using icons would mean a poor user experience.
+One obvious one is using text instead of icons for the mailbox controls. Whilst it would be possible to use icons, it is not possible to use tooltips to indicate what the buttons do. Without being able to add any HTML for tooltips, or add pseduo elements to an `input` (the buttons are actually an `<input type="submit">`), using icons would mean a poor user experience.
+
+The markup also uses old HTML standards; it uses extensively nested tables for layouts and contains minimal classes and IDs. This makes styling difficult...! For example, the only way to select a certain element on a page might be something like `body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)`, and this makes it very easy to run into problems when the same selector matches something on another page.
+
+The above can be mitigated somewhat with the use of attribute selectors. For example, `table[summary="general settings"] tr:nth-child(2) select` is perfectly reasonable, however when reduced to using something much less specific like `td [bgcolor="#CCCCCC"]`, problems can still occur.
+
+Some elements simply aren't styleable, `<input type="checkbox">` for example. A modern approached might be to use a different element, or a `label` to make styling possible, however as we can't change the HTML, this isn't available to us.
+
+The `select` elements falls into this category, however styling of the initial dropdown button is available, excluding the arrow icon. We can hide the arrow and use our own though, using a `background-image`. This means we can both keep the element an obvious dropdown list, and matching the theme.
+
+Images can be changed without modifying any HTML though, using CSS background images. By giving an image padding, a `background-image`, and `height: 0; width :0;`, the original image is hidden and only the new background image can be seen. Whilst the client loading two images isn't ideal, wherever this is used it is with icons (ie, a size of no more than ~20px).
+
+No real time has been spent trying to make things more responsive, it is assumed on a mobile device people will be using the Gmail app.
