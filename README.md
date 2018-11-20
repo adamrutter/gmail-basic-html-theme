@@ -40,7 +40,7 @@ __If you do not already have a `userContent.css`__, you just need to move the do
 
 There are some constraints with bringing the basic HTML Gmail up to date with the modern styling, mainly arising from the inability to modify any HTML code.
 
-One obvious one is using text instead of icons for the mailbox controls. Whilst it would be possible to use icons, it is not possible to use tooltips to indicate what the buttons do. Without being able to add any HTML for tooltips, or add pseduo elements to an `input` (the buttons are actually an `<input type="submit">`), using icons would mean a poor user experience.
+One obvious one is using text instead of icons for the mailbox controls. Whilst it would be possible to use icons, it is not possible to use tooltips to indicate what the buttons do. Without being able to add any HTML for tooltips, or add pseduo elements to an `input` (the buttons are an `<input type="submit">`), using icons would mean a poor user experience.
 
 The markup also uses old HTML standards; it uses extensively nested tables for layouts and contains minimal classes and IDs. This makes styling difficult...! For example, the only way to select a certain element on a page might be something like `body > table:nth-of-type(2) td:nth-of-type(2) table:first-of-type td:nth-of-type(2)`, and this makes it very easy to run into problems when the same selector matches something on another page.
 
