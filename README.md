@@ -2,7 +2,7 @@
 
 Updates the styling of the basic HTML Gmail view to that of the full fat JavaScript version (as much as possible), using custom styles in Firefox.
 
-![](example.jpeg)
+![](example.png)
 
 ## Installation
 
