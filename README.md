@@ -2,6 +2,8 @@
 
 Updates the styling of the basic HTML Gmail view to that of the full fat JavaScript version (as much as possible), using custom styles in Firefox.
 
+![](example.jpeg)
+
 ## Installation
 
 Firefox reads custom styles from `userContent.css`, found in the `chrome` sub-directory of your __profile__ directory. [Instructions on how to find your profile directory](https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data#w_how-do-i-find-my-profile).
