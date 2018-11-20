@@ -35,3 +35,10 @@ __If you already have a `userContent.css` in this directory__, the content of th
 __If you do not already have a `userContent.css`__, you just need to move the downloaded `userContent.css` to the correct directory.
 
 * Move or copy/paste the downloaded `userContent.css` to your `chrome` directory.
+* 
+
+## Constraints
+
+There are some constraints with bringing the theme up to date with modern Gmail, mainly arising from the inability to modify any `html` code.
+
+One obvious one is using text instead of icons for the mailbox controls. Whilst it would be possible to use icons, it is not possible to use tooltips to indicate what the buttons do. Without being able to add any `html` for tooltips, or add pseduo elements to an `input` (the buttons are actually an `<input type="submit">`), using icons would mean a poor user experience.
