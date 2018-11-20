@@ -25,7 +25,7 @@ We need to enable some essential syntax to ensure the styles only apply where we
 
 ### 3. Add the theme to your `chrome` directory
 
-Now we just need to move the downloaded styles to our `chrome` directory, a sub-directory of the __profile__ directory.
+Now we just need to move the downloaded styles to our `chrome` directory, a sub-directory of your __profile__ directory.
 
 __If you already have a `userContent.css` in this directory__, the content of the downloaded `userContent.css` should be appended to the existing file. You can:
 
