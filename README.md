@@ -32,7 +32,7 @@ Now we just need to move the downloaded styles to our `chrome` directory, a sub-
 __If you already have a `userContent.css` in this directory__, the content of the downloaded `userContent.css` should be appended to the existing file. You can:
 
 * Copy/paste the content of the downloaded `userContent.css` to your current file using a text editor.
-* Use a command such as `cat` in the CLI. `cat downloads/userContent.css > chrome/userContent.css` _Note: the paths will almost certainly be different in your case._
+* Use a command such as `cat` in the CLI. `cat ~/Downloads/userContent.css > ~/path/to/your/profile/chrome/userContent.css` _Note: `~/path/to/your/profile` should obviously be replaced with the path to your profile!_
 
 __If you do not already have a `userContent.css`__, you just need to move the downloaded `userContent.css` to the correct directory.
 
