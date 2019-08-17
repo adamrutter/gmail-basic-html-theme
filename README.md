@@ -38,11 +38,11 @@ __If you do not already have a `userContent.css`__, you just need to move the do
 
 * Move or copy/paste the downloaded `userContent.css` to your `chrome` directory.
 
-## Constraints
+## Restrictions
 
 ### No modification of HTML
 
-There are some constraints with bringing the basic HTML Gmail up to date with the modern styling, mainly arising from the inability to modify any HTML code.
+There are some restrictions with bringing the basic HTML Gmail up to date with the modern styling, mainly arising from the inability to modify any HTML code.
 
 One obvious one is using text instead of icons for the mailbox controls. Whilst it would be possible to use icons, it is not possible to use tooltips to indicate what the buttons do. Without being able to add any HTML for tooltips, or add pseduo elements to an `input` (the buttons are an `<input type="submit">`), using icons would mean a poor user experience.
 
